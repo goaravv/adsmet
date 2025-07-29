@@ -55,18 +55,18 @@ export const PricingSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           
           {/* Header */}
-          <div className="text-center space-y-6 mb-16">
-            <h2 className="text-4xl lg:text-5xl font-tech font-bold">
+          <div className="text-center space-y-6 mb-12 md:mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold">
               <span className="text-foreground">Choose Your Budget –</span>
               <br />
               <span className="neon-text">Transparent Pricing</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Flexible plans based on your monthly ad spend
             </p>
           </div>

@@ -111,15 +111,15 @@ All colors MUST be HSL.
 
 @layer components {
   .neon-glow {
-    @apply shadow-[0_0_20px_hsl(var(--neon-glow)),0_0_40px_hsl(var(--neon-glow)),0_0_60px_hsl(var(--neon-glow))];
+    @apply shadow-[0_0_5px_hsl(var(--neon-glow)),0_0_10px_hsl(var(--neon-glow)),0_0_15px_hsl(var(--neon-glow))];
   }
   
   .neon-border {
-    @apply border border-accent shadow-[0_0_10px_hsl(var(--neon-glow))];
+    @apply border border-accent shadow-[0_0_3px_hsl(var(--neon-glow))];
   }
   
   .neon-text {
-    @apply text-accent drop-shadow-[0_0_10px_hsl(var(--neon-glow))];
+    @apply text-accent drop-shadow-[0_0_3px_hsl(var(--neon-glow))];
   }
   
   .gradient-dark {

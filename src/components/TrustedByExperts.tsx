@@ -27,18 +27,18 @@ export const TrustedByExperts = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Column - Title */}
           <div className="space-y-6">
-            <h2 className="text-4xl lg:text-5xl font-tech font-bold">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold">
               <span className="text-foreground">Trusted by</span>
               <br />
               <span className="neon-text">Industry Experts</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground">
               See why businesses rely on AdsMet's AI performance and 
               human expertise to scale their revenue.
             </p>

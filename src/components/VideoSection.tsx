@@ -1,17 +1,17 @@
 export const VideoSection = () => {
   return (
-    <section className="py-20 gradient-dark">
+    <section className="py-12 md:py-20 gradient-dark">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Side - Caption */}
           <div className="space-y-6">
-            <h2 className="text-4xl lg:text-5xl font-tech font-bold">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold">
               <span className="text-foreground">Launching the</span>
               <br />
               <span className="neon-text">Future of Meta Ads</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Watch how our AI-powered system revolutionizes Meta advertising 
               with real-time optimization, predictive analytics, and automated 
               campaign management.

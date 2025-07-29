@@ -4,16 +4,16 @@ import { Calendar, Clock, Zap } from "lucide-react";
 
 export const CalendarSection = () => {
   return (
-    <section className="py-20 gradient-dark">
+    <section className="py-12 md:py-20 gradient-dark">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div>
-            <h2 className="text-4xl lg:text-5xl font-tech font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold mb-4">
               <span className="text-foreground">Book Your</span>{" "}
               <span className="neon-text">Free Consultation</span>{" "}
               <span className="text-foreground">Now</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Schedule a strategic session with our AI and human experts
             </p>
           </div>
