@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
+import { Input } from "@/components/ui/input";
 import { Shield, Zap, TrendingUp, Phone } from "lucide-react";
 
 export const PricingSection = () => {
