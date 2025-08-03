@@ -18,6 +18,17 @@ export const StickyFooterCTA = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Auto-reopen after 1 minute when minimized
+  useEffect(() => {
+    if (isMinimized) {
+      const timer = setTimeout(() => {
+        setIsMinimized(false);
+      }, 60000); // 1 minute
+
+      return () => clearTimeout(timer);
+    }
+  }, [isMinimized]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Trigger Vapi AI call

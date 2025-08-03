@@ -34,20 +34,18 @@ export const VideoSection = () => {
 
           {/* Right Side - Video */}
           <div className="relative">
-            <div className="aspect-video bg-secondary rounded-lg neon-border overflow-hidden animate-pulse-neon">
-              {/* Placeholder for video */}
-              <div className="w-full h-full bg-gradient-to-br from-secondary to-primary/20 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-20 h-20 mx-auto bg-accent/20 rounded-full flex items-center justify-center neon-border">
-                    <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <p className="font-tech text-sm text-muted-foreground">
-                    Watch Our AI in Action
-                  </p>
-                </div>
-              </div>
+            <div className="aspect-video bg-secondary rounded-lg neon-border overflow-hidden">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/6qZA5ZT-9IM?si=H9CKVaAwiTGKsGuK" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-lg"
+              />
             </div>
             
             {/* Decorative Elements */}

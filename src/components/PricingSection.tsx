@@ -26,12 +26,19 @@ export const PricingSection = () => {
     const heroForm = document.getElementById('hero-form');
     if (heroForm) {
       heroForm.scrollIntoView({ behavior: 'smooth' });
-      // Set budget in hero form (this would need state management in real app)
+      // Set budget and package in hero form
       setTimeout(() => {
         const budgetInput = document.querySelector('input[placeholder="e.g. 5000"]') as HTMLInputElement;
         if (budgetInput) {
           budgetInput.value = targetBudget.toString();
           budgetInput.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+        
+        // Set package dropdown
+        const packageSelect = document.querySelector('select') as HTMLSelectElement;
+        if (packageSelect) {
+          packageSelect.value = packageType.toLowerCase();
+          packageSelect.dispatchEvent(new Event('change', { bubbles: true }));
         }
       }, 500);
     }
@@ -186,7 +193,7 @@ export const PricingSection = () => {
                     className="w-full"
                     onClick={() => jumpToBudget(currentBudget, plan.title.toLowerCase())}
                   >
-                    Get Started
+                    Select Package
                   </Button>
                 </CardContent>
               </Card>
