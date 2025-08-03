@@ -1,12 +1,22 @@
-import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock, Zap } from "lucide-react";
 
 export const CalendarSection = () => {
+  useEffect(() => {
+    // Load Calendly script if not already loaded
+    if (!document.querySelector('script[src*="calendly"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
-    <section className="py-12 md:py-20 gradient-dark">
+    <section className="py-12 md:py-20 bg-card/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-6xl mx-auto text-center space-y-8">
           <div>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold mb-4">
               <span className="text-foreground">Book Your</span>{" "}
@@ -56,22 +66,24 @@ export const CalendarSection = () => {
             </Card>
           </div>
 
-          {/* Calendly Widget Placeholder */}
-          <Card className="neon-border bg-card/90 backdrop-blur-sm">
-            <CardContent className="p-8">
-              <div className="aspect-video bg-secondary/50 rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <Calendar className="w-16 h-16 mx-auto text-accent" />
-                  <h3 className="text-2xl font-tech font-bold">Calendly Widget</h3>
-                  <p className="text-muted-foreground max-w-md">
-                    Integration point for your Calendly booking widget. 
-                    Users can select available times directly here.
-                  </p>
-                  <Button variant="neon" className="mt-4">
-                    Book Free Strategy Call
-                  </Button>
-                </div>
+          {/* Calendly Widget */}
+          <Card className="neon-border bg-card/90">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex items-center justify-center mb-6">
+                <Calendar className="w-8 h-8 text-accent mr-3" />
+                <h3 className="text-lg md:text-xl font-tech font-bold">Select Your Preferred Time</h3>
               </div>
+              
+              <div 
+                className="calendly-inline-widget bg-background/50 border border-accent/30 rounded-lg overflow-hidden mx-auto" 
+                data-url="https://calendly.com/hm-gaurav2001/30min?hide_gdpr_banner=1" 
+                style={{
+                  minWidth: '320px',
+                  height: '600px',
+                  width: '100%',
+                  maxWidth: '100%'
+                }}
+              />
             </CardContent>
           </Card>
 

@@ -1,24 +1,27 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Zap, Target, TrendingUp } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
 
 export const HeroSection = () => {
+  const [budget, setBudget] = useState("");
+  const [selectedPackage, setSelectedPackage] = useState("");
+
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // This would trigger Vapi AI call agent
-    console.log("Form submitted - trigger Vapi AI call");
+    console.log("Form submitted - trigger Vapi AI call", { budget, selectedPackage });
+  };
+
+  const scrollToForm = () => {
+    document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="min-h-screen hero-gradient relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-lg animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-lg animate-float" style={{animationDelay: '1s'}} />
-      </div>
+    <section className="min-h-screen bg-background relative overflow-hidden">
 
       <div className="container mx-auto px-4 py-12 lg:py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
@@ -68,14 +71,17 @@ export const HeroSection = () => {
               </div>
             </div>
 
-            <Button variant="call" className="mx-auto lg:mx-0 text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4">
-              <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
-              📞 Call Now
+            <Button 
+              onClick={scrollToForm}
+              variant="neon" 
+              className="mx-auto lg:mx-0 text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4"
+            >
+              Select Your Budget
             </Button>
           </div>
 
           {/* Right Side - Lead Form */}
-          <div className="relative mt-8 lg:mt-0">
+          <div id="hero-form" className="relative mt-8 lg:mt-0">
             <Card className="neon-border bg-card/95 backdrop-blur-sm">
               <CardContent className="p-6 lg:p-8">
                 <div className="text-center mb-6">
@@ -105,6 +111,35 @@ export const HeroSection = () => {
                     placeholder="Website URL" 
                     className="neon-border bg-background/50 font-tech"
                   />
+                  
+                  {/* Budget and Package Row */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-tech text-muted-foreground mb-2">Monthly Budget ($)</label>
+                      <Input 
+                        type="number"
+                        placeholder="e.g. 5000" 
+                        value={budget}
+                        onChange={(e) => setBudget(e.target.value)}
+                        className="neon-border bg-background/50 font-tech"
+                        required 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-tech text-muted-foreground mb-2">Package</label>
+                      <Select value={selectedPackage} onValueChange={setSelectedPackage} required>
+                        <SelectTrigger className="neon-border bg-background/50 font-tech">
+                          <SelectValue placeholder="Select package" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-card border-accent">
+                          <SelectItem value="monthly">Monthly</SelectItem>
+                          <SelectItem value="3months">3 Months</SelectItem>
+                          <SelectItem value="6months">6 Months</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                  
                   <Textarea 
                     placeholder="Describe your project and goals..." 
                     className="neon-border bg-background/50 font-tech min-h-[100px]"
@@ -116,7 +151,8 @@ export const HeroSection = () => {
                     variant="neon" 
                     className="w-full py-4 text-lg"
                   >
-                    📞 Call Me Now - Get Instant AI Analysis
+                    <Phone className="w-5 h-5 mr-2 text-black" />
+                    Call Me Now - Get Instant AI Analysis
                   </Button>
                   
                   <p className="text-xs text-center text-muted-foreground">

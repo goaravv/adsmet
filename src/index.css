@@ -26,18 +26,18 @@ All colors MUST be HSL.
     --muted: 0 0% 16%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 78 100% 50%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 210 100% 56%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 20%;
     --input: 0 0% 16%;
-    --ring: 78 100% 50%;
+    --ring: 210 100% 56%;
 
-    --neon: 78 100% 50%;
-    --neon-glow: 78 100% 50% / 0.5;
+    --neon: 210 100% 56%;
+    --neon-glow: 210 100% 56% / 0.5;
     --dark: 0 0% 8%;
     --darker: 0 0% 4%;
 

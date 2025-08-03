@@ -1,12 +1,41 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Shield, Zap, TrendingUp, Phone } from "lucide-react";
 
 export const PricingSection = () => {
   const [budget, setBudget] = useState([10000]);
+  const [manualBudget, setManualBudget] = useState("10000");
   const currentBudget = budget[0];
+
+  const handleManualBudgetChange = (value: string) => {
+    const numValue = parseInt(value) || 1000;
+    setManualBudget(value);
+    setBudget([numValue]);
+  };
+
+  const handleSliderChange = (value: number[]) => {
+    setBudget(value);
+    setManualBudget(value[0].toString());
+  };
+
+  const jumpToBudget = (targetBudget: number, packageType: string) => {
+    // Update hero form with selected values
+    const heroForm = document.getElementById('hero-form');
+    if (heroForm) {
+      heroForm.scrollIntoView({ behavior: 'smooth' });
+      // Set budget in hero form (this would need state management in real app)
+      setTimeout(() => {
+        const budgetInput = document.querySelector('input[placeholder="e.g. 5000"]') as HTMLInputElement;
+        if (budgetInput) {
+          budgetInput.value = targetBudget.toString();
+          budgetInput.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }, 500);
+    }
+  };
 
   const calculateFee = (percentage: number) => {
     return Math.round((currentBudget * percentage) / 100);
@@ -83,18 +112,31 @@ export const PricingSection = () => {
                     </div>
                   </div>
                   
-                  <div className="px-4">
-                    <Slider
-                      value={budget}
-                      onValueChange={setBudget}
-                      max={100000}
-                      min={1000}
-                      step={100}
-                      className="w-full"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground mt-2">
-                      <span>$1,000</span>
-                      <span>$100,000</span>
+                  <div className="space-y-4">
+                    <div className="px-4">
+                      <Input
+                        type="number"
+                        value={manualBudget}
+                        onChange={(e) => handleManualBudgetChange(e.target.value)}
+                        className="text-center text-2xl font-tech font-bold neon-border bg-background/50"
+                        min="1000"
+                        max="100000"
+                        step="500"
+                      />
+                    </div>
+                    <div className="px-4">
+                      <Slider
+                        value={budget}
+                        onValueChange={handleSliderChange}
+                        max={100000}
+                        min={1000}
+                        step={500}
+                        className="w-full"
+                      />
+                      <div className="flex justify-between text-sm text-muted-foreground mt-2">
+                        <span>$1,000</span>
+                        <span>$100,000</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -142,6 +184,7 @@ export const PricingSection = () => {
                   <Button 
                     variant={plan.popular ? "neon" : "neonOutline"} 
                     className="w-full"
+                    onClick={() => jumpToBudget(currentBudget, plan.title.toLowerCase())}
                   >
                     Get Started
                   </Button>

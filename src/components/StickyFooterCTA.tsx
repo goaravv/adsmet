@@ -57,8 +57,8 @@ export const StickyFooterCTA = () => {
                 required 
               />
               <Button type="submit" variant="neon" className="w-full py-3">
-                <Phone className="w-4 h-4 mr-2" />
-                📞 Call Me Now - Free AI Analysis
+                <Phone className="w-4 h-4 mr-2 text-black" />
+                Call Me Now - Free AI Analysis
               </Button>
             </form>
             <Button
@@ -73,27 +73,27 @@ export const StickyFooterCTA = () => {
 
           {/* Desktop Layout */}
           <div className="hidden md:flex items-center justify-between">
-            <form onSubmit={handleSubmit} className="flex-1 flex items-center space-x-3">
+            <form onSubmit={handleSubmit} className="flex-1 flex items-center space-x-4 max-w-4xl">
               <Input 
-                placeholder="Name" 
-                className="max-w-[120px] bg-background/50 neon-border font-tech"
+                placeholder="Full Name" 
+                className="min-w-[160px] bg-background/50 neon-border font-tech"
                 required 
               />
               <Input 
                 type="tel" 
-                placeholder="Phone" 
-                className="max-w-[140px] bg-background/50 neon-border font-tech"
+                placeholder="Phone Number" 
+                className="min-w-[160px] bg-background/50 neon-border font-tech"
                 required 
               />
               <Input 
                 type="email" 
-                placeholder="Email" 
-                className="max-w-[160px] bg-background/50 neon-border font-tech"
+                placeholder="Email Address" 
+                className="min-w-[180px] bg-background/50 neon-border font-tech"
                 required 
               />
-              <Button type="submit" variant="neon" className="whitespace-nowrap">
-                <Phone className="w-4 h-4 mr-2" />
-                📞 Call Me Now
+              <Button type="submit" variant="neon" className="whitespace-nowrap px-6">
+                <Phone className="w-4 h-4 mr-2 text-black" />
+                Call Me Now
               </Button>
             </form>
             
