@@ -20,10 +20,14 @@ export const HeroSection = () => {
     document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToPricing = () => {
+    const pricingSection = document.querySelector('[data-section="pricing"]');
+    pricingSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="min-h-screen bg-background relative overflow-hidden">
-
-      <div className="container mx-auto px-4 py-12 lg:py-20 relative z-10">
+      <div className="container mx-auto px-4 py-20 lg:py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           
           {/* Left Side - Hero Content */}
@@ -72,7 +76,7 @@ export const HeroSection = () => {
             </div>
 
             <Button 
-              onClick={scrollToForm}
+              onClick={scrollToPricing}
               variant="neon" 
               className="mx-auto lg:mx-0 text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4"
             >
@@ -83,52 +87,58 @@ export const HeroSection = () => {
           {/* Right Side - Lead Form */}
           <div id="hero-form" className="relative mt-8 lg:mt-0">
             <Card className="neon-border bg-card/95 backdrop-blur-sm">
-              <CardContent className="p-6 lg:p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl lg:text-2xl font-tech font-bold mb-2">Get Your Free Strategy Call</h3>
-                  <p className="text-sm lg:text-base text-muted-foreground">AI will call you instantly after submission</p>
+              <CardContent className="p-4 lg:p-6">
+                <div className="text-center mb-4 lg:mb-6">
+                  <h3 className="text-lg lg:text-xl font-tech font-bold mb-2">Get Your Free Strategy Call</h3>
+                  <p className="text-xs lg:text-sm text-muted-foreground">AI will call you instantly after submission</p>
                 </div>
                 
-                <form onSubmit={handleFormSubmit} className="space-y-4">
+                <form onSubmit={handleFormSubmit} className="space-y-3 lg:space-y-4">
                   <Input 
                     placeholder="Full Name" 
-                    className="neon-border bg-background/50 font-tech"
+                    className="neon-border bg-background/50 font-tech text-sm lg:text-base"
                     required 
                   />
                   <Input 
                     type="email" 
                     placeholder="Email Address" 
-                    className="neon-border bg-background/50 font-tech"
+                    className="neon-border bg-background/50 font-tech text-sm lg:text-base"
                     required 
                   />
                   <Input 
                     type="tel" 
                     placeholder="Phone Number" 
-                    className="neon-border bg-background/50 font-tech"
+                    className="neon-border bg-background/50 font-tech text-sm lg:text-base"
                     required 
                   />
                   <Input 
                     placeholder="Website URL" 
-                    className="neon-border bg-background/50 font-tech"
+                    className="neon-border bg-background/50 font-tech text-sm lg:text-base"
                   />
                   
                   {/* Budget and Package Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-4">
                     <div>
-                      <label className="block text-sm font-tech text-muted-foreground mb-2">Monthly Budget ($)</label>
+                      <label className="block text-xs lg:text-sm font-tech text-muted-foreground mb-2">Monthly Budget ($)</label>
                       <Input 
                         type="number"
                         placeholder="e.g. 5000" 
                         value={budget}
-                        onChange={(e) => setBudget(e.target.value)}
-                        className="neon-border bg-background/50 font-tech"
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          if (value === '' || parseInt(value) >= 1000) {
+                            setBudget(value);
+                          }
+                        }}
+                        className="neon-border bg-background/50 font-tech text-sm lg:text-base"
+                        min="1000"
                         required 
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-tech text-muted-foreground mb-2">Package</label>
+                      <label className="block text-xs lg:text-sm font-tech text-muted-foreground mb-2">Package</label>
                       <Select value={selectedPackage} onValueChange={setSelectedPackage} required>
-                        <SelectTrigger className="neon-border bg-background/50 font-tech">
+                        <SelectTrigger className="neon-border bg-background/50 font-tech text-sm lg:text-base">
                           <SelectValue placeholder="Select package" />
                         </SelectTrigger>
                         <SelectContent className="bg-card border-accent">
@@ -142,16 +152,16 @@ export const HeroSection = () => {
                   
                   <Textarea 
                     placeholder="Describe your project and goals..." 
-                    className="neon-border bg-background/50 font-tech min-h-[100px]"
-                    rows={4}
+                    className="neon-border bg-background/50 font-tech min-h-[80px] lg:min-h-[100px] text-sm lg:text-base"
+                    rows={3}
                   />
                   
                   <Button 
                     type="submit" 
                     variant="neon" 
-                    className="w-full py-4 text-lg"
+                    className="w-full py-3 lg:py-4 text-base lg:text-lg"
                   >
-                    <Phone className="w-5 h-5 mr-2 text-black" />
+                    <Phone className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-black" />
                     Call Me Now - Get Instant AI Analysis
                   </Button>
                   

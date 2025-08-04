@@ -84,25 +84,25 @@ export const StickyFooterCTA = () => {
 
           {/* Desktop Layout */}
           <div className="hidden md:flex items-center justify-between">
-            <form onSubmit={handleSubmit} className="flex-1 flex items-center space-x-4 max-w-4xl">
+            <form onSubmit={handleSubmit} className="flex-1 flex items-center space-x-3 max-w-5xl">
               <Input 
                 placeholder="Full Name" 
-                className="min-w-[160px] bg-background/50 neon-border font-tech"
+                className="min-w-[180px] max-w-[200px] bg-background/50 neon-border font-tech"
                 required 
               />
               <Input 
                 type="tel" 
                 placeholder="Phone Number" 
-                className="min-w-[160px] bg-background/50 neon-border font-tech"
+                className="min-w-[180px] max-w-[200px] bg-background/50 neon-border font-tech"
                 required 
               />
               <Input 
                 type="email" 
                 placeholder="Email Address" 
-                className="min-w-[180px] bg-background/50 neon-border font-tech"
+                className="min-w-[200px] max-w-[220px] bg-background/50 neon-border font-tech"
                 required 
               />
-              <Button type="submit" variant="neon" className="whitespace-nowrap px-6">
+              <Button type="submit" variant="neon" className="whitespace-nowrap px-8 py-2">
                 <Phone className="w-4 h-4 mr-2 text-black" />
                 Call Me Now
               </Button>

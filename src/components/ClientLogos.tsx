@@ -49,12 +49,12 @@ export const ClientLogos = () => {
           {[...eventImages, ...eventImages, ...eventImages].map((image, index) => (
             <div
               key={`event-${index}`}
-              className="flex-shrink-0 mx-8 min-w-[200px] h-[120px] rounded-lg overflow-hidden neon-border"
+              className="flex-shrink-0 mx-4 md:mx-8 min-w-[150px] w-[150px] h-[150px] md:min-w-[200px] md:w-[200px] md:h-[200px] rounded-lg overflow-hidden neon-border"
             >
               <img 
                 src={image} 
                 alt={`Event ${index + 1}`}
-                className="w-full h-full object-cover grayscale transition-all duration-300 hover:grayscale-0"
+                className="w-full h-full object-cover transition-all duration-300"
                 style={{
                   filter: 'grayscale(100%) sepia(1) hue-rotate(200deg) saturate(2) brightness(0.8)',
                   border: '2px solid hsl(var(--accent))'

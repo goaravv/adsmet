@@ -78,10 +78,10 @@ export const CalendarSection = () => {
                 className="calendly-inline-widget bg-background/50 border border-accent/30 rounded-lg overflow-hidden mx-auto" 
                 data-url="https://calendly.com/hm-gaurav2001/30min?hide_gdpr_banner=1" 
                 style={{
-                  minWidth: '320px',
-                  height: '600px',
+                  minWidth: '300px',
+                  height: '500px',
                   width: '100%',
-                  maxWidth: '100%'
+                  maxWidth: '900px'
                 }}
               />
             </CardContent>

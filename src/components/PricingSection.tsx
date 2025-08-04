@@ -11,9 +11,11 @@ export const PricingSection = () => {
   const currentBudget = budget[0];
 
   const handleManualBudgetChange = (value: string) => {
-    const numValue = parseInt(value) || 1000;
-    setManualBudget(value);
-    setBudget([numValue]);
+    if (value === '' || parseInt(value) >= 1000) {
+      const numValue = parseInt(value) || 1000;
+      setManualBudget(value);
+      setBudget([numValue]);
+    }
   };
 
   const handleSliderChange = (value: number[]) => {
@@ -34,11 +36,16 @@ export const PricingSection = () => {
           budgetInput.dispatchEvent(new Event('input', { bubbles: true }));
         }
         
-        // Set package dropdown
-        const packageSelect = document.querySelector('select') as HTMLSelectElement;
-        if (packageSelect) {
-          packageSelect.value = packageType.toLowerCase();
-          packageSelect.dispatchEvent(new Event('change', { bubbles: true }));
+        // Set package dropdown by triggering the Select component
+        const selectTrigger = document.querySelector('[role="combobox"]') as HTMLElement;
+        if (selectTrigger) {
+          selectTrigger.click();
+          setTimeout(() => {
+            const packageOption = document.querySelector(`[data-value="${packageType.toLowerCase()}"]`) as HTMLElement;
+            if (packageOption) {
+              packageOption.click();
+            }
+          }, 100);
         }
       }, 500);
     }
@@ -91,7 +98,7 @@ export const PricingSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-background">
+    <section data-section="pricing" className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           
