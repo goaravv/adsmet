@@ -27,21 +27,21 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen bg-background relative overflow-hidden">
-      <div className="container mx-auto px-4 py-20 lg:py-20 relative z-10">
+      <div className="container mx-auto px-4 py-8 lg:py-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           
           {/* Left Side - Hero Content */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-tech font-bold leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-tech font-bold leading-tight">
                 <span className="text-foreground">Meta Ads</span>{" "}
                 <span className="neon-text">AI Agency</span>
                 <br />
-                <span className="text-xl md:text-3xl lg:text-4xl">100% Lead Generation</span>{" "}
-                <span className="neon-text text-xl md:text-3xl lg:text-4xl">Guaranteed</span>
+                <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">100% Lead Generation</span>{" "}
+                <span className="neon-text text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">Guaranteed</span>
               </h1>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl">
                 Unlock Strategic, AI-Driven Meta Ads Campaigns That Drive{" "}
                 <span className="text-accent font-semibold">Real Results</span>
               </p>

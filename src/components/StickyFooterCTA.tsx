@@ -83,26 +83,26 @@ export const StickyFooterCTA = () => {
           </div>
 
           {/* Desktop Layout */}
-          <div className="hidden md:flex items-center justify-between">
-            <form onSubmit={handleSubmit} className="flex-1 flex items-center space-x-3 max-w-5xl">
+          <div className="hidden md:flex items-center justify-between w-full">
+            <form onSubmit={handleSubmit} className="flex-1 flex items-center gap-2 lg:gap-3 w-full">
               <Input 
                 placeholder="Full Name" 
-                className="min-w-[180px] max-w-[200px] bg-background/50 neon-border font-tech"
+                className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
                 required 
               />
               <Input 
                 type="tel" 
                 placeholder="Phone Number" 
-                className="min-w-[180px] max-w-[200px] bg-background/50 neon-border font-tech"
+                className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
                 required 
               />
               <Input 
                 type="email" 
                 placeholder="Email Address" 
-                className="min-w-[200px] max-w-[220px] bg-background/50 neon-border font-tech"
+                className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
                 required 
               />
-              <Button type="submit" variant="neon" className="whitespace-nowrap px-8 py-2">
+              <Button type="submit" variant="neon" className="whitespace-nowrap px-4 lg:px-6 py-2 flex-shrink-0">
                 <Phone className="w-4 h-4 mr-2 text-black" />
                 Call Me Now
               </Button>
@@ -112,7 +112,7 @@ export const StickyFooterCTA = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMinimized(true)}
-              className="ml-3"
+              className="ml-2 flex-shrink-0"
             >
               <X className="w-4 h-4" />
             </Button>
