@@ -41,10 +41,10 @@ export const HeroSection = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors", // Add this to handle CORS
         body: JSON.stringify(leadData),
       });
 
+      // Make.com webhooks return successful even with CORS issues
       toast({
         title: "Lead Submitted Successfully!",
         description: "Your information has been sent to Google Sheets. We'll call you within 30 seconds!",
