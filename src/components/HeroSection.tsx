@@ -8,23 +8,16 @@ import { Phone, Zap, Target, TrendingUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const HeroSection = () => {
-  const [budget, setBudget] = useState("");
+  const [budget, setBudget] = useState("1000");
   const [selectedPackage, setSelectedPackage] = useState("");
-  const [webhookUrl, setWebhookUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  
+  // Fixed webhook URL
+  const webhookUrl = "https://hook.eu2.make.com/2gt919rtohwiy271uf7ln4tv81fylr0h";
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!webhookUrl) {
-      toast({
-        title: "Error",
-        description: "Please enter your Zapier webhook URL to connect to Google Sheets",
-        variant: "destructive",
-      });
-      return;
-    }
 
     setIsLoading(true);
     
@@ -59,7 +52,7 @@ export const HeroSection = () => {
 
       // Reset form
       (e.target as HTMLFormElement).reset();
-      setBudget("");
+      setBudget("1000");
       setSelectedPackage("");
     } catch (error) {
       console.error("Error submitting lead:", error);
@@ -84,11 +77,11 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen bg-background relative overflow-hidden">
-      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8 lg:py-16 relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-4 lg:py-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center min-h-[80vh]">
           
           {/* Left Side - Hero Content */}
-          <div className="space-y-6 sm:space-y-8 text-center lg:text-left order-2 lg:order-1">
+          <div className="space-y-6 sm:space-y-8 text-center lg:text-left order-1">
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-tech font-bold leading-tight">
                 <span className="text-foreground">Meta Ads</span>{" "}
@@ -142,7 +135,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Right Side - Lead Form */}
-          <div id="hero-form" className="relative order-1 lg:order-2">
+          <div id="hero-form" className="relative order-2 lg:order-2">
             <Card className="neon-border bg-card/95 backdrop-blur-sm">
               <CardContent className="p-3 sm:p-4 lg:p-6">
                 <div className="text-center mb-3 sm:mb-4 lg:mb-6">
@@ -151,20 +144,6 @@ export const HeroSection = () => {
                 </div>
                 
                 <form onSubmit={handleFormSubmit} className="space-y-2 sm:space-y-3 lg:space-y-4">
-                  {/* Zapier Webhook URL */}
-                  <div>
-                    <label className="block text-xs sm:text-xs lg:text-sm font-tech text-muted-foreground mb-1 sm:mb-2">
-                      Zapier Webhook URL (to connect to Google Sheets)
-                    </label>
-                    <Input 
-                      type="url"
-                      placeholder="https://hooks.zapier.com/hooks/catch/..." 
-                      value={webhookUrl}
-                      onChange={(e) => setWebhookUrl(e.target.value)}
-                      className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base"
-                      required 
-                    />
-                  </div>
                   
                   <Input 
                     name="name"
