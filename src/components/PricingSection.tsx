@@ -127,16 +127,42 @@ export const PricingSection = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="px-4">
+                    <div className="px-4 relative">
                       <Input
                         type="number"
                         value={manualBudget}
                         onChange={(e) => handleManualBudgetChange(e.target.value)}
-                        className="text-center text-2xl font-tech font-bold neon-border bg-background/50"
+                        className="text-center text-2xl font-tech font-bold neon-border bg-background/50 pr-16"
                         min="1000"
                         max="100000"
                         step="500"
                       />
+                      <div className="absolute right-4 top-0 h-full flex flex-col">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const current = parseInt(manualBudget) || 1000;
+                            const newValue = (current + 500).toString();
+                            handleManualBudgetChange(newValue);
+                          }}
+                          className="h-1/2 px-3 text-sm hover:bg-accent/20 border-l border-b border-border rounded-tr-md"
+                        >
+                          ▲
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const current = parseInt(manualBudget) || 1000;
+                            if (current > 1000) {
+                              const newValue = (current - 500).toString();
+                              handleManualBudgetChange(newValue);
+                            }
+                          }}
+                          className="h-1/2 px-3 text-sm hover:bg-accent/20 border-l border-border rounded-br-md"
+                        >
+                          ▼
+                        </button>
+                      </div>
                     </div>
                     <div className="px-4">
                       <Slider

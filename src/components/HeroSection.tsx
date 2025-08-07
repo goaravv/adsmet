@@ -175,20 +175,47 @@ export const HeroSection = () => {
                   <div className="grid grid-cols-1 gap-2 sm:gap-3 lg:grid-cols-2 lg:gap-4">
                     <div>
                       <label className="block text-xs sm:text-xs lg:text-sm font-tech text-muted-foreground mb-1 sm:mb-2">Monthly Budget ($)</label>
-                      <Input 
-                        type="number"
-                        placeholder="e.g. 5000" 
-                        value={budget}
-                        onChange={(e) => {
-                          const value = e.target.value;
-                          if (value === '' || parseInt(value) >= 1000) {
-                            setBudget(value);
-                          }
-                        }}
-                        className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base"
-                        min="1000"
-                        required 
-                      />
+                      <div className="relative">
+                        <Input 
+                          type="number"
+                          placeholder="e.g. 5000" 
+                          value={budget}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            if (value === '' || parseInt(value) >= 1000) {
+                              setBudget(value);
+                            }
+                          }}
+                          className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base pr-8"
+                          min="1000"
+                          step="500"
+                          required 
+                        />
+                        <div className="absolute right-0 top-0 h-full flex flex-col">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const current = parseInt(budget) || 1000;
+                              setBudget((current + 500).toString());
+                            }}
+                            className="h-1/2 px-2 text-xs hover:bg-accent/20 border-l border-b border-border rounded-tr-md"
+                          >
+                            ▲
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const current = parseInt(budget) || 1000;
+                              if (current > 1000) {
+                                setBudget((current - 500).toString());
+                              }
+                            }}
+                            className="h-1/2 px-2 text-xs hover:bg-accent/20 border-l border-border rounded-br-md"
+                          >
+                            ▼
+                          </button>
+                        </div>
+                      </div>
                     </div>
                     <div>
                       <label className="block text-xs sm:text-xs lg:text-sm font-tech text-muted-foreground mb-1 sm:mb-2">Package</label>
