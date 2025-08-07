@@ -3,10 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, X } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 export const StickyFooterCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: ""
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,10 +37,44 @@ export const StickyFooterCTA = () => {
     }
   }, [isMinimized]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Trigger Vapi AI call
-    console.log("Sticky form submitted - trigger Vapi AI call");
+    setIsLoading(true);
+
+    const leadData = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      source: "Sticky Footer CTA",
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      const response = await fetch("https://hook.eu2.make.com/lxgvp6776rnthapza5wvurytv8s4hq1g", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(leadData),
+      });
+
+      toast({
+        title: "Request Submitted Successfully!",
+        description: "Your information has been sent. We'll call you within 30 seconds!",
+      });
+
+      // Reset form
+      setFormData({ name: "", phone: "", email: "" });
+    } catch (error) {
+      console.error("Error submitting lead:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (!isVisible) return null;
@@ -52,12 +94,16 @@ export const StickyFooterCTA = () => {
                 <Input 
                   placeholder="Your Name" 
                   className="text-sm bg-background/50 neon-border font-tech"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   required 
                 />
                 <Input 
                   type="tel" 
                   placeholder="Phone Number" 
                   className="text-sm bg-background/50 neon-border font-tech"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   required 
                 />
               </div>
@@ -65,11 +111,13 @@ export const StickyFooterCTA = () => {
                 type="email" 
                 placeholder="Email Address" 
                 className="text-sm bg-background/50 neon-border font-tech"
+                value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
                 required 
               />
-              <Button type="submit" variant="neon" className="w-full py-3">
+              <Button type="submit" variant="neon" className="w-full py-3" disabled={isLoading}>
                 <Phone className="w-4 h-4 mr-2 text-black" />
-                Call Me Now - Free AI Analysis
+                {isLoading ? "Submitting..." : "Call Me Now - Free AI Analysis"}
               </Button>
             </form>
             <Button
@@ -88,23 +136,29 @@ export const StickyFooterCTA = () => {
               <Input 
                 placeholder="Full Name" 
                 className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
+                value={formData.name}
+                onChange={(e) => setFormData({...formData, name: e.target.value})}
                 required 
               />
               <Input 
                 type="tel" 
                 placeholder="Phone Number" 
                 className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
+                value={formData.phone}
+                onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 required 
               />
               <Input 
                 type="email" 
                 placeholder="Email Address" 
                 className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
+                value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
                 required 
               />
-              <Button type="submit" variant="neon" className="whitespace-nowrap px-4 lg:px-6 py-2 flex-shrink-0">
+              <Button type="submit" variant="neon" className="whitespace-nowrap px-4 lg:px-6 py-2 flex-shrink-0" disabled={isLoading}>
                 <Phone className="w-4 h-4 mr-2 text-black" />
-                Call Me Now
+                {isLoading ? "Submitting..." : "Call Me Now"}
               </Button>
             </form>
             
