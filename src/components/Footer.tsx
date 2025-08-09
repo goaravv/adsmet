@@ -7,10 +7,10 @@ export const Footer = () => {
         <div className="max-w-4xl mx-auto">
           
           {/* Main Footer Content */}
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="md:col-span-2">
               <h3 className="text-2xl font-tech font-bold neon-text mb-4">
-                AdsMet.com
+                About AdsMet
               </h3>
               <p className="text-muted-foreground mb-4">
                 AI-driven Meta Ads agency delivering guaranteed results 
@@ -32,15 +32,6 @@ export const Footer = () => {
               </div>
             </div>
             
-            <div>
-              <h4 className="font-tech font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-accent transition-colors">Meta Ads Management</a></li>
-                <li><a href="#" className="hover:text-accent transition-colors">AI Campaign Optimization</a></li>
-                <li><a href="#" className="hover:text-accent transition-colors">Lead Generation</a></li>
-                <li><a href="#" className="hover:text-accent transition-colors">Performance Analytics</a></li>
-              </ul>
-            </div>
             
             <div>
               <h4 className="font-tech font-bold mb-4">Company</h4>

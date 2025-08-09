@@ -76,10 +76,10 @@ export const CalendarSection = () => {
               
               <div 
                 className="calendly-inline-widget bg-background/50 border border-accent/30 rounded-lg overflow-hidden mx-auto" 
-                data-url="https://calendly.com/hm-gaurav2001/30min?hide_gdpr_banner=1" 
+                data-url="https://calendly.com/hm-gaurav2001/30min?hide_event_type_details=1&hide_gdpr_banner=1" 
                 style={{
-                  minWidth: '300px',
-                  height: '500px',
+                  minWidth: '320px',
+                  height: '700px',
                   width: '100%',
                   maxWidth: '900px'
                 }}
