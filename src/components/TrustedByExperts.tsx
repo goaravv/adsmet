@@ -73,7 +73,7 @@ export const TrustedByExperts = () => {
                   <Line
                     type="monotone"
                     dataKey="CTR"
-                    stroke="hsl(var(--primary))"
+                    stroke="hsl(var(--foreground))"
                     strokeWidth={2}
                     dot={{ r: 4 }}
                   />
@@ -102,12 +102,12 @@ export const TrustedByExperts = () => {
               {workflowSteps.map((step, i) => (
                 <div
                   key={step}
-                  className="relative bg-muted/30 text-foreground px-5 py-3 rounded-md border border-primary/40 animate-fade-in"
+                  className="relative bg-muted/30 text-foreground px-5 py-3 rounded-md border border-primary animate-fade-in"
                   style={{ animationDelay: `${i * 150}ms` }}
                 >
                   <span className="font-medium">{step}</span>
                   {i < workflowSteps.length - 1 && (
-                    <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-px h-5 bg-primary" />
+                    <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-px h-5 bg-foreground" />
                   )}
                 </div>
               ))}
