@@ -43,15 +43,6 @@ export const TrustedByExperts = () => {
     "Scaling",
   ];
 
-  const [visibleCount, setVisibleCount] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisibleCount((v) => Math.min(v + 1, workflowSteps.length));
-    }, 700);
-    return () => clearInterval(interval);
-  }, []);
-
   const avgCTR = (data.reduce((s, d) => s + d.CTR, 0) / data.length).toFixed(2);
 
   return (
@@ -107,23 +98,16 @@ export const TrustedByExperts = () => {
             <h3 className="text-lg md:text-xl font-tech font-semibold mb-4 text-foreground">
               🤖 AI Workflow Visualizer
             </h3>
-            <div className="flex-1 flex flex-col items-center gap-4 md:gap-6 mt-2 relative">
+            <div className="flex-1 flex flex-col items-center gap-4 md:gap-6 mt-2">
               {workflowSteps.map((step, i) => (
                 <div
                   key={step}
-                  className="relative bg-muted/30 text-foreground px-5 py-3 rounded-md border border-primary"
-                  style={{
-                    opacity: visibleCount > i ? 1 : 0,
-                    transform: visibleCount > i ? 'translateY(0)' : 'translateY(8px)',
-                    transition: 'opacity 300ms ease, transform 300ms ease'
-                  }}
+                  className="relative bg-muted/30 text-foreground px-5 py-3 rounded-md border border-primary animate-fade-in"
+                  style={{ animationDelay: `${i * 150}ms` }}
                 >
                   <span className="font-medium">{step}</span>
                   {i < workflowSteps.length - 1 && (
-                    <div
-                      className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-px bg-foreground"
-                      style={{ height: visibleCount > i ? 20 : 0, transition: 'height 500ms ease' }}
-                    />
+                    <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-px h-5 bg-foreground" />
                   )}
                 </div>
               ))}
