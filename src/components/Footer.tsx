@@ -54,9 +54,9 @@ export const Footer = () => {
             </div>
             
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                Terms of Service
-              </a>
+              <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-accent transition-colors">
+                Terms & Conditions
+              </Link>
               <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
                 Privacy Policy
               </a>
