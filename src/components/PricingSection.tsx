@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Zap, TrendingUp, Phone } from "lucide-react";
 
 export const PricingSection = () => {
@@ -95,6 +96,19 @@ export const PricingSection = () => {
       ],
       popular: false
     }
+  ];
+
+  const faqs = [
+    { question: "What makes your agency different from other Meta Ads agencies?", answer: "We combine the speed and precision of AI with the strategic insights of human experts. Our AI handles real-time data analysis, bid adjustments, and performance optimization, while our human team ensures creative direction, campaign alignment, and brand voice remain on point." },
+    { question: "How does the AI + Human model work in practice?", answer: "Our AI constantly monitors ad performance, adjusts targeting, and tests creatives for maximum ROI. Meanwhile, our human specialists review results, refine strategies, and make judgment calls that AI alone can’t—like understanding cultural nuances or reacting to market trends." },
+    { question: "Will AI fully replace human decision-making in my campaigns?", answer: "No. AI works as a powerful assistant, but human expertise is always in control. The AI suggests, tests, and optimizes, while our team makes the final strategic decisions to keep campaigns aligned with your business goals." },
+    { question: "Is AI safe to use for managing my ad budget?", answer: "Yes. Our AI operates with guardrails set by our human experts. This means your budget is always managed responsibly, with AI working only within the limits and strategies we define together." },
+    { question: "Can you customize campaigns for my business needs?", answer: "Absolutely. Our hybrid model ensures campaigns are not only data-driven but also tailored to your brand identity, target audience, and specific objectives." },
+    { question: "How quickly can I see results?", answer: "AI begins optimizing your ads from day one, so you’ll often see early improvements within the first few days. That said, sustainable, high-ROI campaigns usually take 2–4 weeks to fully mature." },
+    { question: "What kind of businesses do you work with?", answer: "We work with e-commerce brands, service providers, startups, and established enterprises—any business that wants smarter, faster, and more profitable Meta ad campaigns." },
+    { question: "Will I have access to campaign performance data?", answer: "Yes. We provide a live dashboard where you can track real-time performance metrics like CTR, ROAS, conversions, and ad spend—so you’re always in the loop." },
+    { question: "Do you handle both creative and technical aspects of campaigns?", answer: "Yes. Our AI runs split tests to find high-performing creatives, while our human team designs ad visuals, writes compelling copy, and aligns messaging with your brand." },
+    { question: "How do I get started?", answer: "Simply book a free strategy call. We’ll discuss your goals, analyze your current campaigns (if any), and propose a custom AI + Human ad strategy for you." }
   ];
 
   return (
@@ -248,6 +262,39 @@ export const PricingSection = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* FAQs Section */}
+          <div className="mt-12 md:mt-16">
+            <section aria-labelledby="faq-heading" className="max-w-3xl mx-auto">
+              <h3 id="faq-heading" className="text-2xl md:text-3xl font-tech font-bold text-foreground text-center mb-6">Frequently Asked Questions</h3>
+              <Card className="neon-border bg-card/90">
+                <CardContent className="p-4 md:p-6">
+                  <Accordion type="single" collapsible className="w-full">
+                    {faqs.map((faq, idx) => (
+                      <AccordionItem key={idx} value={`item-${idx + 1}`}>
+                        <AccordionTrigger>{`${idx + 1}. ${faq.question}`}</AccordionTrigger>
+                        <AccordionContent>{faq.answer}</AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </CardContent>
+              </Card>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    mainEntity: faqs.map(({ question, answer }) => ({
+                      "@type": "Question",
+                      name: question,
+                      acceptedAnswer: { "@type": "Answer", text: answer },
+                    })),
+                  }),
+                }}
+              />
+            </section>
           </div>
         </div>
       </div>
