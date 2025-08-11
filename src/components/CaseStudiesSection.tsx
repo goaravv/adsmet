@@ -146,7 +146,7 @@ export const CaseStudiesSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <header className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
           <h2 id="case-studies-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Our Client Campaign <span className="text-primary">Case Studies</span>
+            Our Client Campaign <span className="text-[#1f8fff]">Case Studies</span>
           </h2>
           <p className="mt-3 text-muted-foreground">
             Real results from AI-optimized Meta Ads campaigns across lead gen, engagement, and awareness.
