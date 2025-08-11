@@ -6,21 +6,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Zap, Target, TrendingUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 export const HeroSection = () => {
   const [budget, setBudget] = useState("1000");
   const [selectedPackage, setSelectedPackage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-  
+  const {
+    toast
+  } = useToast();
+
   // Fixed webhook URL
   const webhookUrl = "https://hook.eu2.make.com/2gt919rtohwiy271uf7ln4tv81fylr0h";
-
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     setIsLoading(true);
-    
+
     // Get form data
     const formData = new FormData(e.target as HTMLFormElement);
     const leadData = {
@@ -32,22 +31,21 @@ export const HeroSection = () => {
       package: selectedPackage,
       description: formData.get('description'),
       timestamp: new Date().toISOString(),
-      triggered_from: window.location.origin,
+      triggered_from: window.location.origin
     };
-
     try {
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(leadData),
+        body: JSON.stringify(leadData)
       });
 
       // Make.com webhooks return successful even with CORS issues
       toast({
         title: "Lead Submitted Successfully!",
-        description: "Your information has been sent to Google Sheets. We'll call you within 30 seconds!",
+        description: "Your information has been sent to Google Sheets. We'll call you within 30 seconds!"
       });
 
       // Reset form
@@ -59,24 +57,24 @@ export const HeroSection = () => {
       toast({
         title: "Error",
         description: "Failed to submit lead. Please check the webhook URL and try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsLoading(false);
     }
   };
-
   const scrollToForm = () => {
-    document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('hero-form')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   const scrollToPricing = () => {
     const pricingSection = document.querySelector('[data-section="pricing"]');
-    pricingSection?.scrollIntoView({ behavior: 'smooth' });
+    pricingSection?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="min-h-screen bg-background relative overflow-hidden">
+  return <section className="min-h-screen bg-background relative overflow-hidden">
       <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-4 lg:py-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center min-h-[80vh]">
           
@@ -85,9 +83,9 @@ export const HeroSection = () => {
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-tech font-bold leading-tight">
                 <span className="text-foreground">Meta Ads</span>{" "}
-                <span className="neon-text">AI +</span>
+                <span className="neon-text">AI Driven</span>
                 <br />
-                <span className="text-foreground">Human Agency</span>
+                <span className="text-foreground">Agency</span>
               </h1>
               
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
@@ -124,11 +122,7 @@ export const HeroSection = () => {
               </div>
             </div>
 
-            <Button 
-              onClick={scrollToPricing}
-              variant="neon" 
-              className="mx-auto lg:mx-0 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4"
-            >
+            <Button onClick={scrollToPricing} variant="neon" className="mx-auto lg:mx-0 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4">
               Select Your Budget
             </Button>
           </div>
@@ -144,73 +138,35 @@ export const HeroSection = () => {
                 
                 <form onSubmit={handleFormSubmit} className="space-y-2 sm:space-y-3 lg:space-y-4">
                   
-                  <Input 
-                    name="name"
-                    placeholder="Full Name" 
-                    className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base"
-                    required 
-                  />
-                  <Input 
-                    name="email"
-                    type="email" 
-                    placeholder="Email Address" 
-                    className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base"
-                    required 
-                  />
-                  <Input 
-                    name="phone"
-                    type="tel" 
-                    placeholder="Phone Number" 
-                    className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base"
-                    required 
-                  />
-                  <Input 
-                    name="website"
-                    placeholder="Website URL" 
-                    className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base"
-                  />
+                  <Input name="name" placeholder="Full Name" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" required />
+                  <Input name="email" type="email" placeholder="Email Address" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" required />
+                  <Input name="phone" type="tel" placeholder="Phone Number" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" required />
+                  <Input name="website" placeholder="Website URL" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" />
                   
                   {/* Budget and Package Row */}
                   <div className="grid grid-cols-1 gap-2 sm:gap-3 lg:grid-cols-2 lg:gap-4">
                     <div>
                       <label className="block text-xs sm:text-xs lg:text-sm font-tech text-muted-foreground mb-1 sm:mb-2">Monthly Budget ($)</label>
                       <div className="relative">
-                        <Input 
-                          type="number"
-                          placeholder="e.g. 5000" 
-                          value={budget}
-                          onChange={(e) => {
-                            const value = e.target.value;
-                            if (value === '' || parseInt(value) >= 1000) {
-                              setBudget(value);
-                            }
-                          }}
-                          className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base pr-8"
-                          min="1000"
-                          step="500"
-                          required 
-                        />
+                        <Input type="number" placeholder="e.g. 5000" value={budget} onChange={e => {
+                        const value = e.target.value;
+                        if (value === '' || parseInt(value) >= 1000) {
+                          setBudget(value);
+                        }
+                      }} className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base pr-8" min="1000" step="500" required />
                         <div className="absolute right-0 top-0 h-full flex flex-col">
-                          <button
-                            type="button"
-                            onClick={() => {
-                              const current = parseInt(budget) || 1000;
-                              setBudget((current + 500).toString());
-                            }}
-                            className="h-1/2 px-2 text-xs hover:bg-accent/20 border-l border-b border-border rounded-tr-md"
-                          >
+                          <button type="button" onClick={() => {
+                          const current = parseInt(budget) || 1000;
+                          setBudget((current + 500).toString());
+                        }} className="h-1/2 px-2 text-xs hover:bg-accent/20 border-l border-b border-border rounded-tr-md">
                             ▲
                           </button>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              const current = parseInt(budget) || 1000;
-                              if (current > 1000) {
-                                setBudget((current - 500).toString());
-                              }
-                            }}
-                            className="h-1/2 px-2 text-xs hover:bg-accent/20 border-l border-border rounded-br-md"
-                          >
+                          <button type="button" onClick={() => {
+                          const current = parseInt(budget) || 1000;
+                          if (current > 1000) {
+                            setBudget((current - 500).toString());
+                          }
+                        }} className="h-1/2 px-2 text-xs hover:bg-accent/20 border-l border-border rounded-br-md">
                             ▼
                           </button>
                         </div>
@@ -231,27 +187,13 @@ export const HeroSection = () => {
                     </div>
                   </div>
                   
-                  <Textarea 
-                    name="description"
-                    placeholder="Describe your project and goals..." 
-                    className="neon-border bg-background/50 font-tech min-h-[60px] sm:min-h-[80px] lg:min-h-[100px] text-xs sm:text-sm lg:text-base"
-                    rows={3}
-                  />
+                  <Textarea name="description" placeholder="Describe your project and goals..." className="neon-border bg-background/50 font-tech min-h-[60px] sm:min-h-[80px] lg:min-h-[100px] text-xs sm:text-sm lg:text-base" rows={3} />
                   
-                  <Button 
-                    type="submit" 
-                    variant="neon" 
-                    className="w-full py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-lg"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <>Loading...</>
-                    ) : (
-                      <>
+                  <Button type="submit" variant="neon" className="w-full py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-lg" disabled={isLoading}>
+                    {isLoading ? <>Loading...</> : <>
                         <Phone className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 mr-2 text-black" />
                         Call Me Now - Get Instant AI Analysis
-                      </>
-                    )}
+                      </>}
                   </Button>
                   
                   <p className="text-xs text-center text-muted-foreground">
@@ -263,6 +205,5 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
