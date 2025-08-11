@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="max-w-4xl mx-auto">
           
           {/* Main Footer Content */}
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
               <h3 className="text-2xl font-tech font-bold neon-text mb-4">
                 About AdsMet
@@ -41,6 +41,16 @@ export const Footer = () => {
                 <li><a href="#" className="hover:text-accent transition-colors">Case Studies</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Careers</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-tech font-bold mb-4">Legal</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link to="/terms-and-conditions" className="hover:text-accent transition-colors">Terms & Conditions</Link></li>
+                <li><Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/disclaimer" className="hover:text-accent transition-colors">Disclaimer</Link></li>
+                <li><Link to="/cookie-policy" className="hover:text-accent transition-colors">Cookie Policy</Link></li>
+                <li><Link to="/legal-policies" className="hover:text-accent transition-colors">Legal Policies</Link></li>
               </ul>
             </div>
           </div>
