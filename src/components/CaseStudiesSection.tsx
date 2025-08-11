@@ -158,7 +158,7 @@ export const CaseStudiesSection: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 p-4 md:p-6">
             {current.stats.map((s, i) => <div key={i} className="rounded-lg border border-border/60 bg-card/50 p-4 text-center">
                 <h3 className="text-xs md:text-sm font-medium text-foreground/80">{s.title}</h3>
-                <p className="text-xl md:text-2xl font-bold mt-1 text-slate-50">{s.value}</p>
+                <p className="text-xl md:text-2xl font-bold mt-1 text-[#1f8fff]">{s.value}</p>
               </div>)}
           </div>
 
