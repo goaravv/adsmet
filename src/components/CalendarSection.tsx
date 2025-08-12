@@ -14,7 +14,7 @@ export const CalendarSection = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-20 bg-card/30">
+    <section id="free-consultation" className="py-12 md:py-20 bg-card/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center space-y-8">
           <div>

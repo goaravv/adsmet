@@ -142,11 +142,11 @@ export const CaseStudiesSection: React.FC = () => {
     return () => clearInterval(t);
   }, [paused]);
   const current = useMemo(() => CASE_STUDIES[index], [index]);
-  return <section id="case-studies" aria-labelledby="case-studies-heading" className="py-16 md:py-24 bg-background">
+  return <section id="case-studies" aria-labelledby="case-studies-heading" className="py-12 md:py-16 bg-background" style={{ ['--case-line' as any]: '210 81% 51%' }}>
       <div className="container mx-auto px-4">
-        <header className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+        <header className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
           <h2 id="case-studies-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Our Client Campaign <span className="text-[#1f8fff]">Case Studies</span>
+            Our Client Campaign <span className="text-[hsl(var(--case-line))]">Case Studies</span>
           </h2>
           <p className="mt-3 text-muted-foreground">
             Real results from AI-optimized Meta Ads campaigns across lead gen, engagement, and awareness.
@@ -155,19 +155,19 @@ export const CaseStudiesSection: React.FC = () => {
 
         <div className="rounded-xl border border-border bg-card text-card-foreground shadow-sm overflow-hidden animate-fade-in" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 p-4 md:p-6">
-            {current.stats.map((s, i) => <div key={i} className="rounded-lg border border-border/60 bg-card/50 p-4 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 p-3 md:p-4">
+            {current.stats.map((s, i) => <div key={i} className="rounded-lg border border-border/60 bg-card/50 p-3 text-center">
                 <h3 className="text-xs md:text-sm font-medium text-foreground/80">{s.title}</h3>
-                <p className="text-xl md:text-2xl font-bold mt-1 text-[#1f8fff]">{s.value}</p>
+                <p className="text-lg md:text-xl font-bold mt-1 text-[hsl(var(--case-line))]">{s.value}</p>
               </div>)}
           </div>
 
           {/* Main area */}
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6 p-4 md:p-6">
-            {/* Chart */}
-            <div className="md:col-span-2 rounded-lg border border-border/60 bg-card/50 p-4">
-              <h3 className="text-base md:text-lg font-semibold mb-3">Performance Overview</h3>
-              <div className="h-56 md:h-72">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 p-3 md:p-4">
+          {/* Chart */}
+          <div className="md:col-span-2 rounded-lg border border-border/60 bg-card/50 p-4">
+            <h3 className="text-sm md:text-base font-semibold mb-3">Performance Overview</h3>
+            <div className="h-48 md:h-60">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={current.chartData} margin={{
                   left: 4,
@@ -183,7 +183,7 @@ export const CaseStudiesSection: React.FC = () => {
                     border: "1px solid hsl(var(--border))",
                     color: "hsl(var(--card-foreground))"
                   }} />
-                    <Line type="monotone" dataKey="leads" stroke="hsl(var(--primary))" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="leads" stroke="hsl(var(--case-line))" strokeWidth={2} dot={false} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>

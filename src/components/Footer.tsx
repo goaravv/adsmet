@@ -1,5 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
+import { Instagram, Facebook, Youtube, Twitter, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
@@ -38,20 +40,25 @@ export const Footer = () => {
               <h4 className="font-tech font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link to="/about-us" className="hover:text-accent transition-colors">About Us</Link></li>
-                <li><a href="#" className="hover:text-accent transition-colors">Case Studies</a></li>
-                <li><a href="#" className="hover:text-accent transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-accent transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-tech font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link to="/terms-and-conditions" className="hover:text-accent transition-colors">Terms & Conditions</Link></li>
                 <li><Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
                 <li><Link to="/disclaimer" className="hover:text-accent transition-colors">Disclaimer</Link></li>
                 <li><Link to="/cookie-policy" className="hover:text-accent transition-colors">Cookie Policy</Link></li>
                 <li><Link to="/legal-policies" className="hover:text-accent transition-colors">Legal Policies</Link></li>
               </ul>
+            </div>
+            <div>
+              <h4 className="font-tech font-bold mb-4">Connect</h4>
+              <div className="flex items-center gap-4 mb-4 text-muted-foreground">
+                <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram size={18} /></a>
+                <a href="#" aria-label="Facebook" className="hover:text-accent transition-colors"><Facebook size={18} /></a>
+                <a href="#" aria-label="YouTube" className="hover:text-accent transition-colors"><Youtube size={18} /></a>
+                <a href="#" aria-label="X (Twitter)" className="hover:text-accent transition-colors"><Twitter size={18} /></a>
+                <a href="#" aria-label="LinkedIn" className="hover:text-accent transition-colors"><Linkedin size={18} /></a>
+              </div>
+              <Link to="/#free-consultation">
+                <Button variant="call" className="w-full">Call me now</Button>
+              </Link>
             </div>
           </div>
           
@@ -63,16 +70,12 @@ export const Footer = () => {
               © 2025 AdsMet.com – All Rights Reserved
             </div>
             
-            <div className="flex space-x-6 text-sm">
-              <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-accent transition-colors">
-                Terms & Conditions
-              </Link>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                Contact
-              </a>
+            <div className="flex flex-wrap gap-4 text-sm justify-center md:justify-end">
+              <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-accent transition-colors">Terms & Conditions</Link>
+              <Link to="/privacy-policy" className="text-muted-foreground hover:text-accent transition-colors">Privacy Policy</Link>
+              <Link to="/disclaimer" className="text-muted-foreground hover:text-accent transition-colors">Disclaimer</Link>
+              <Link to="/cookie-policy" className="text-muted-foreground hover:text-accent transition-colors">Cookie Policy</Link>
+              <Link to="/legal-policies" className="text-muted-foreground hover:text-accent transition-colors">Legal Policies</Link>
             </div>
           </div>
           
