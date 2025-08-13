@@ -9,7 +9,7 @@ const AboutUs = () => {
   const metrics = [
     { label: "ROAS", value: 5.8, suffix: "x" },
     { label: "CTR", value: 3.4, suffix: "%" },
-    { label: "Spend", value: 1250, prefix: "$" },
+    { label: "Spend", value: "107k", prefix: "$" },
   ];
 
   // SEO: Title, description, canonical
