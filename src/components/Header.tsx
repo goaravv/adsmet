@@ -15,7 +15,7 @@ export const Header = () => {
             <img 
               src="/lovable-uploads/2e803225-7e5f-48bc-bbd0-2175007a3978.png" 
               alt="AdsMet.com Logo" 
-              className="h-8 md:h-10 w-auto"
+              className="h-10 md:h-12 w-auto"
             />
           </div>
           
