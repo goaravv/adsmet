@@ -12,6 +12,7 @@ import Disclaimer from "./pages/Disclaimer";
 import CookiePolicy from "./pages/CookiePolicy";
 import LegalPolicies from "./pages/LegalPolicies";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 
 
 const queryClient = new QueryClient();
@@ -34,6 +35,8 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* ElevenLabs assistant is always sticky across pages */}
+        <ElevenLabsWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
