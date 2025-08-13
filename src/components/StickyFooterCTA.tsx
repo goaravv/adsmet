@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, ChevronUp, ChevronDown } from "lucide-react";
+import { Phone, ChevronUp, ChevronDown, X } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 export const StickyFooterCTA = () => {
@@ -73,7 +73,16 @@ export const StickyFooterCTA = () => {
       {/* Lead form panel - appears above everything when opened (including ElevenLabs) */}
       {isOpen && (
         <div className="fixed bottom-0 left-0 right-0 z-[9999] transition-all duration-300">
-          <Card className="mx-2 md:mx-4 mb-2 md:mb-4 neon-border bg-card/98 backdrop-blur-md">
+          <Card className="relative mx-2 md:mx-4 mb-2 md:mb-4 neon-border bg-card/98 backdrop-blur-md">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setIsOpen(false)}
+              aria-label="Close lead form"
+              className="absolute top-2 right-2 rounded-full bg-background/80 backdrop-blur-md neon-border"
+            >
+              <X className="w-4 h-4" />
+            </Button>
             <CardContent className="p-3 md:p-4">
               {/* Mobile Layout */}
               <div className="block md:hidden">
