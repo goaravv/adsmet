@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, X } from "lucide-react";
+import { Phone, X, ChevronUp, ChevronDown } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { ElevenLabsWidget } from "@/components/ElevenLabsWidget";
 
 export const StickyFooterCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -177,19 +178,36 @@ export const StickyFooterCTA = () => {
           </p>
         </CardContent>
       </Card>
-      
-      {/* Reopener when minimized */}
-      {isMinimized && (
-        <div className="fixed bottom-4 right-4">
+
+      {/* Left arrow toggle to collapse/expand */}
+      <div className="fixed bottom-4 left-4 z-[60]">
+        {isMinimized ? (
           <Button
             variant="neon"
+            size="icon"
             onClick={() => setIsMinimized(false)}
-            className="rounded-full w-14 h-14 p-0 animate-pulse-neon"
+            className="rounded-full"
+            aria-label="Expand"
           >
-            <Phone className="w-6 h-6" />
+            <ChevronUp className="w-5 h-5" />
           </Button>
-        </div>
-      )}
+        ) : (
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setIsMinimized(true)}
+            className="rounded-full bg-background/80 backdrop-blur-md neon-border"
+            aria-label="Minimize"
+          >
+            <ChevronDown className="w-5 h-5" />
+          </Button>
+        )}
+      </div>
+
+      {/* ElevenLabs real-time voice widget */}
+      <div className="fixed bottom-4 right-4 z-[60]">
+        <ElevenLabsWidget />
+      </div>
     </div>
   );
 };
