@@ -10,8 +10,9 @@ import event9 from "@/assets/event-9.png";
 
 export const ClientLogos = () => {
   const logos = [
-    "Netflix", "Spotify", "Tesla", "Airbnb", "Uber", "Nike", "Apple", "Google",
-    "Microsoft", "Amazon", "Meta", "Twitter", "LinkedIn", "Slack", "Zoom"
+    "The Wild Verve", "Digvijay Architect", "Maya Biotech India", "Pari Match", 
+    "Devika Foods", "Fastocart", "Fashna", "Edunial Infotech Group", 
+    "Gamp", "Smart AC Solutions", "Nature Roar Hotel", "The Morning Crypto"
   ];
 
   const eventImages = [
