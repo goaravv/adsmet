@@ -55,22 +55,51 @@ export const PricingSection = () => {
     return Math.round(currentBudget * percentage / 100);
   };
   const plans = [{
-    title: "Monthly",
+    title: "Monthly Plan",
     percentage: 20,
     period: "per month",
-    features: ["AI Campaign Optimization", "Real-time Performance Monitoring", "Weekly Strategy Calls", "Basic Reporting Dashboard"],
+    features: [
+      "Define Clear Objectives",
+      "Identify Target Audience",
+      "AI-Driven Competitors Analysis",
+      "AI Develop Ad Copies & Scripts",
+      "Set Up Ad Campaigns",
+      "Budget & Bidding Strategy",
+      "Implement Conversion Tracking",
+      "Launch The Campaigns",
+      "Real-time Performance Monitoring",
+      "1 Weekly Strategy Call",
+      "Monthly Performance Report",
+    ],
     popular: false
   }, {
-    title: "3 Months",
+    title: "3-Month Plan",
     percentage: 18,
     period: "per month",
-    features: ["Everything in Monthly", "Advanced AI Analytics", "Bi-weekly Strategy Calls", "A/B Testing Suite", "Custom Landing Pages"],
+    features: [
+      "Everything in the Monthly Plan",
+      "Data-backed audience refinement using AI insights",
+      "A/B testing for creatives & ad copies",
+      "Advanced budget reallocation for better ROAS",
+      "Conversion funnel optimization",
+      "Weekly Strategy Calls (with deeper analysis)",
+      "Monthly & Mid-Month Reporting",
+    ],
     popular: true
   }, {
-    title: "6 Months",
+    title: "6-Month Plan",
     percentage: 15,
     period: "per month",
-    features: ["Everything in 3 Months", "Dedicated Account Manager", "Weekly Strategy Calls", "Advanced Conversion Tracking", "Priority Support", "White-Label Reporting"],
+    features: [
+      "Everything in the 3-Month Plan",
+      "Aggressive scaling strategies for winning campaigns",
+      "Seasonal & event-based campaign planning",
+      "Multi-adset & multi-objective campaigns for diversification",
+      "Retargeting & lookalike audience mastery",
+      "AI-driven predictive budget planning",
+      "Weekly Strategy Calls + Priority Support",
+      "Detailed Monthly Reports + Quarterly Growth Review",
+    ],
     popular: false
   }];
   const faqs = [{
@@ -196,7 +225,7 @@ export const PricingSection = () => {
                       </li>)}
                   </ul>
                   
-                  <Button variant={plan.popular ? "neon" : "neonOutline"} className="w-full" onClick={() => jumpToBudget(currentBudget, plan.title.toLowerCase())}>
+                  <Button variant={plan.popular ? "neon" : "neonOutline"} className="w-full" onClick={() => jumpToBudget(currentBudget, index === 0 ? "monthly" : index === 1 ? "3 months" : "6 months")}>
                     Select Package
                   </Button>
                 </CardContent>

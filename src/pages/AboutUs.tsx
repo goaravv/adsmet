@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyFooterCTA } from "@/components/StickyFooterCTA";
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp } from "lucide-react";
+import { Sparkles, TrendingUp, Linkedin, Twitter } from "lucide-react";
 
 const AboutUs = () => {
   const metrics = [
@@ -149,6 +149,16 @@ const AboutUs = () => {
               <p className="text-muted-foreground">
                 Hi, I'm Gaurav Sharma — the driving force behind AdsMet.com, an AI-powered Meta Ads Agency. With over 6 years in the digital marketing arena, I’ve scaled multiple projects to achieve triple their revenue and maintain a consistent 2–3x ROAS. My mission is to blend human creativity with AI precision for exceptional advertising results.
               </p>
+              <div className="flex items-center gap-4 pt-2">
+                <a href="https://www.linkedin.com/in/gauravsharma64/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center text-muted-foreground hover:text-accent transition-colors" aria-label="Gaurav Sharma on LinkedIn">
+                  <Linkedin className="w-5 h-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </a>
+                <a href="https://x.com/gaurav_sharma64" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center text-muted-foreground hover:text-accent transition-colors" aria-label="Gaurav Sharma on Twitter/X">
+                  <Twitter className="w-5 h-5" />
+                  <span className="sr-only">Twitter</span>
+                </a>
+              </div>
             </motion.div>
           </section>
         </article>

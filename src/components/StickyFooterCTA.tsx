@@ -72,7 +72,7 @@ export const StickyFooterCTA = () => {
 
       {/* Lead form panel - appears above everything when opened (including ElevenLabs) */}
       {isOpen && (
-        <div className="fixed bottom-0 left-0 right-0 z-[90] transition-all duration-300">
+        <div className="fixed bottom-0 left-0 right-0 z-[9999] transition-all duration-300">
           <Card className="mx-2 md:mx-4 mb-2 md:mb-4 neon-border bg-card/98 backdrop-blur-md">
             <CardContent className="p-3 md:p-4">
               {/* Mobile Layout */}
