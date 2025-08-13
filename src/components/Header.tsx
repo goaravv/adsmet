@@ -11,8 +11,12 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="font-tech font-bold text-xl md:text-2xl neon-text">
-            AdsMet.com
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/2e803225-7e5f-48bc-bbd0-2175007a3978.png" 
+              alt="AdsMet.com Logo" 
+              className="h-8 md:h-10 w-auto"
+            />
           </div>
           
           {/* Call Button */}
