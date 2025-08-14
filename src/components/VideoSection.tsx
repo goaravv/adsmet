@@ -30,7 +30,7 @@ export const VideoSection = () => {
           {/* Right Side - Video */}
           <div className="relative">
             <div className="aspect-video bg-secondary rounded-lg neon-border overflow-hidden">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6qZA5ZT-9IM?si=H9CKVaAwiTGKsGuK" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="rounded-lg" />
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/S50UzIJK5_8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="rounded-lg" />
             </div>
             
             {/* Decorative Elements */}
