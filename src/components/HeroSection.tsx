@@ -82,8 +82,9 @@ export const HeroSection = () => {
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left order-1">
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-tech font-bold leading-tight">
-                <span className="text-foreground">Meta Ads</span>{" "}
-                <span className="neon-text">AI Driven</span>
+                <span className="text-foreground">AdsMet: </span>
+                <span className="text-foreground">Ai-Driven</span>{" "}
+                <span className="neon-text">Meta Ads</span>
                 <br />
                 <span className="text-foreground">Agency</span>
               </h1>
