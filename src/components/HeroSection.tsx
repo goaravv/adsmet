@@ -192,7 +192,7 @@ export const HeroSection = () => {
                   <Button type="submit" variant="neon" className="w-full py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-lg" disabled={isLoading}>
                     {isLoading ? <>Loading...</> : <>
                         <Phone className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 mr-2 text-black" />
-                        Call Me Now - Get Instant AI Analysis
+                        Call Me Now - Get Live Call Analysis
                       </>}
                   </Button>
                   
