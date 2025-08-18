@@ -69,7 +69,7 @@ const Disclaimer = () => {
             </p>
 
             <p>
-              If you have any questions about this Disclaimer, please contact us at support@adsmet.com.
+              If you have any questions about this Disclaimer, please contact us at support@adsmet.agency.
             </p>
           </motion.section>
         </article>

@@ -79,7 +79,7 @@ const TermsAndConditions = () => {
             </p>
 
             <p>
-              If you have questions about these terms, please contact us at support@adsmet.com.
+              If you have questions about these terms, please contact us at support@adsmet.agency.
             </p>
           </motion.section>
         </article>

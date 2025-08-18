@@ -67,7 +67,7 @@ export const Footer = () => {
           {/* Bottom Footer */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © 2025 AdsMet.com – All Rights Reserved
+              © 2025 AdsMet.agency – All Rights Reserved
             </div>
             
             <div className="flex flex-wrap gap-4 text-sm justify-center md:justify-end">

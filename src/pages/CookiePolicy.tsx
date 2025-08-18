@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 const CookiePolicy = () => {
   // SEO: Title, description, canonical
   useEffect(() => {
-    document.title = "Cookie Policy | AdsMet.com / AI-Driven Meta Ads Agency";
+    document.title = "Cookie Policy | AdsMet.agency / AI-Driven Meta Ads Agency";
 
-    const metaDescContent = "Learn how AdsMet.com uses cookies to enhance your browsing experience and optimize AI-driven Meta Ads performance.";
+    const metaDescContent = "Learn how AdsMet.agency uses cookies to enhance your browsing experience and optimize AI-driven Meta Ads performance.";
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!metaDesc) {
       metaDesc = document.createElement("meta");
@@ -81,7 +81,7 @@ const CookiePolicy = () => {
             </p>
 
             <p>
-              If you have questions about our Cookie Policy, please contact us at support@adsmet.com.
+              If you have questions about our Cookie Policy, please contact us at support@adsmet.agency.
             </p>
           </motion.section>
         </article>

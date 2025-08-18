@@ -14,7 +14,7 @@ const AboutUs = () => {
 
   // SEO: Title, description, canonical
   useEffect(() => {
-    document.title = "About AdsMet.com / Meta Ads AI Driven Agency";
+    document.title = "About AdsMet.agency / Meta Ads AI Driven Agency";
 
     const metaDescContent = "Let’s explore the world of AdsMet Backend Team and how your ads get multiple X growth with AI-driven Meta Ads.";
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;

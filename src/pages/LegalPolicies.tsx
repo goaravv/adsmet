@@ -79,7 +79,7 @@ const LegalPolicies = () => {
             </p>
 
             <p>
-              For questions regarding our Legal Policies, contact us at support@adsmet.com.
+              For questions regarding our Legal Policies, contact us at support@adsmet.agency.
             </p>
           </motion.section>
         </article>

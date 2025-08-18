@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 const PrivacyPolicy = () => {
   // SEO: Title, description, canonical
   useEffect(() => {
-    document.title = "Privacy Policy | AdsMet.com / AI-Driven Meta Ads Agency";
+    document.title = "Privacy Policy | AdsMet.agency / AI-Driven Meta Ads Agency";
 
-    const metaDescContent = "Discover how AdsMet.com protects your data while delivering AI-driven Meta Ads that scale your business with precision and performance.";
+    const metaDescContent = "Discover how AdsMet.agency protects your data while delivering AI-driven Meta Ads that scale your business with precision and performance.";
     let metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!metaDesc) {
       metaDesc = document.createElement("meta");
@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
             </p>
 
             <p>
-              If you have questions regarding this Privacy Policy, please contact us at support@adsmet.com.
+              If you have questions regarding this Privacy Policy, please contact us at support@adsmet.agency.
             </p>
           </motion.section>
         </article>

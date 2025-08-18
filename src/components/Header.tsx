@@ -14,7 +14,7 @@ export const Header = () => {
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/f77c4739-5d35-4cbc-832d-65399394fd22.png" 
-              alt="AdsMet.com Logo" 
+              alt="AdsMet.agency Logo" 
               className="h-10 md:h-12 w-auto"
             />
           </div>
