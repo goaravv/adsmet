@@ -50,11 +50,11 @@ export const Footer = () => {
             <div>
               <h4 className="font-tech font-bold mb-4">Connect</h4>
               <div className="flex items-center gap-4 mb-4 text-muted-foreground">
-                <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram size={18} /></a>
-                <a href="#" aria-label="Facebook" className="hover:text-accent transition-colors"><Facebook size={18} /></a>
-                <a href="#" aria-label="YouTube" className="hover:text-accent transition-colors"><Youtube size={18} /></a>
-                <a href="#" aria-label="X (Twitter)" className="hover:text-accent transition-colors"><Twitter size={18} /></a>
-                <a href="#" aria-label="LinkedIn" className="hover:text-accent transition-colors"><Linkedin size={18} /></a>
+                <a href="https://www.instagram.com/adsmet_agency/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram size={18} /></a>
+                <a href="https://www.facebook.com/adsmet.agency" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent transition-colors"><Facebook size={18} /></a>
+                <a href="https://www.youtube.com/@adsmet_agency" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-accent transition-colors"><Youtube size={18} /></a>
+                <a href="https://x.com/AdsMet_Agency" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="hover:text-accent transition-colors"><Twitter size={18} /></a>
+                <a href="https://www.linkedin.com/company/108145734/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent transition-colors"><Linkedin size={18} /></a>
               </div>
               <Link to="/#free-consultation">
                 <Button variant="call" className="w-full">Call me now</Button>
