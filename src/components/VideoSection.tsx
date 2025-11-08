@@ -5,12 +5,12 @@ export const VideoSection = () => {
           
           {/* Left Side - Caption */}
           <div className="space-y-6">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-semibold">
               <span className="text-foreground">Launching the</span>
               <br />
-              <span className="neon-text">Future of Meta Ads</span>
+              <span className="neon-text">Future of Performance Marketing</span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">Watch how our AI-powered system revolutionizes Meta advertising with real-time suggestions, predictive analytics, and automated campaign management and reporting.</p>
+            <p className="text-lg md:text-xl text-muted-foreground">Watch how our AI-powered system revolutionizes Google Ads and Meta advertising with real-time suggestions, predictive analytics, and automated campaign management and reporting.</p>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-accent rounded-full neon-glow"></div>

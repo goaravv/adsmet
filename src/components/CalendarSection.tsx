@@ -18,12 +18,12 @@ export const CalendarSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center space-y-8">
           <div>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-semibold mb-4">
               <span className="text-foreground">Book Your</span>{" "}
               <span className="neon-text">Free Consultation</span>{" "}
               <span className="text-foreground">Now</span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground font-medium">
               Schedule a strategic session with our AI and human experts
             </p>
           </div>
@@ -34,7 +34,7 @@ export const CalendarSection = () => {
                 <div className="w-12 h-12 mx-auto bg-accent/20 rounded-lg flex items-center justify-center neon-border mb-4">
                   <Zap className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-tech font-bold mb-2">AI Analysis</h3>
+                <h3 className="font-heading font-semibold mb-2">AI Analysis</h3>
                 <p className="text-sm text-muted-foreground">
                   Instant campaign audit and optimization recommendations
                 </p>
@@ -46,7 +46,7 @@ export const CalendarSection = () => {
                 <div className="w-12 h-12 mx-auto bg-accent/20 rounded-lg flex items-center justify-center neon-border mb-4">
                   <Clock className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-tech font-bold mb-2">30-Min Strategy</h3>
+                <h3 className="font-heading font-semibold mb-2">30-Min Strategy</h3>
                 <p className="text-sm text-muted-foreground">
                   Personalized growth strategy session with our experts
                 </p>
@@ -58,7 +58,7 @@ export const CalendarSection = () => {
                 <div className="w-12 h-12 mx-auto bg-accent/20 rounded-lg flex items-center justify-center neon-border mb-4">
                   <Calendar className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-tech font-bold mb-2">Implementation Plan</h3>
+                <h3 className="font-heading font-semibold mb-2">Implementation Plan</h3>
                 <p className="text-sm text-muted-foreground">
                   Custom roadmap with timeline and expected results
                 </p>
@@ -71,7 +71,7 @@ export const CalendarSection = () => {
             <CardContent className="p-4 md:p-6">
               <div className="flex items-center justify-center mb-6">
                 <Calendar className="w-8 h-8 text-accent mr-3" />
-                <h3 className="text-lg md:text-xl font-tech font-bold">Select Your Preferred Time</h3>
+                <h3 className="text-lg md:text-xl font-heading font-semibold">Select Your Preferred Time</h3>
               </div>
               
               <div 

@@ -45,17 +45,17 @@ export const TrustedByExperts = () => {
   return <section className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         <header className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-semibold">
             <span className="text-foreground">AI Optimized</span>{" "}
             <span className="neon-text">Campaign Growth</span>
             <br />
-            <span className="text-muted-foreground text-lg md:text-xl">Campaign Workflow</span>
+            <span className="text-muted-foreground text-lg md:text-xl font-medium">Campaign Workflow</span>
           </h2>
         </header>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left Column - Live Campaign Performance */}
-          <article className="neon-border bg-card/90 backdrop-blur-sm rounded-lg border border-accent/30 p-4 md:p-6">
+          <article className="neon-border bg-gradient-to-br from-accent/10 via-card/90 to-primary/10 backdrop-blur-sm rounded-lg border border-accent/40 p-4 md:p-6 shadow-lg shadow-accent/20">
             <h3 className="text-lg md:text-xl font-tech font-semibold mb-4 text-foreground">
               Live Campaign Performance
             </h3>
@@ -90,7 +90,7 @@ export const TrustedByExperts = () => {
           </article>
 
           {/* Right Column - AI Workflow Visualizer */}
-          <article className="neon-border bg-card/90 backdrop-blur-sm rounded-lg border border-accent/30 p-4 md:p-6 flex flex-col">
+          <article className="neon-border bg-gradient-to-br from-primary/10 via-card/90 to-accent/10 backdrop-blur-sm rounded-lg border border-accent/40 p-4 md:p-6 flex flex-col shadow-lg shadow-primary/20">
             <h3 className="text-lg md:text-xl font-tech font-semibold mb-4 text-foreground">
               AI Workflow Visualizer
             </h3>

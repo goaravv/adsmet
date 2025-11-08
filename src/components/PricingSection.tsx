@@ -103,8 +103,8 @@ export const PricingSection = () => {
     popular: false
   }];
   const faqs = [{
-    question: "What makes your agency different from other Meta Ads agencies?",
-    answer: "We combine the speed and precision of AI with the strategic insights of human experts. Our AI handles real-time data analysis, bid adjustments, and performance optimization, while our human team ensures creative direction, campaign alignment, and brand voice remain on point."
+    question: "What makes your agency different from other Performance Marketing agencies?",
+    answer: "We combine the speed and precision of AI with the strategic insights of human experts. Our AI handles real-time data analysis, bid adjustments, and performance optimization across Google Ads and Meta Ads, while our human team ensures creative direction, campaign alignment, and brand voice remain on point."
   }, {
     question: "How does the AI + Human model work in practice?",
     answer: "Our AI constantly monitors ad performance, adjusts targeting, and tests creatives for maximum ROI. Meanwhile, our human specialists review results, refine strategies, and make judgment calls that AI alone can’t—like understanding cultural nuances or reacting to market trends."
@@ -122,7 +122,7 @@ export const PricingSection = () => {
     answer: "AI begins optimizing your ads from day one, so you’ll often see early improvements within the first few days. That said, sustainable, high-ROI campaigns usually take 2–4 weeks to fully mature."
   }, {
     question: "What kind of businesses do you work with?",
-    answer: "We work with e-commerce brands, service providers, startups, and established enterprises—any business that wants smarter, faster, and more profitable Meta ad campaigns."
+    answer: "We work with e-commerce brands, service providers, startups, and established enterprises—any business that wants smarter, faster, and more profitable Google Ads and Meta Ads campaigns."
   }, {
     question: "Will I have access to campaign performance data?",
     answer: "Yes. We provide a live dashboard where you can track real-time performance metrics like CTR, ROAS, conversions, and ad spend—so you’re always in the loop."
@@ -139,12 +139,12 @@ export const PricingSection = () => {
           
           {/* Header */}
           <div className="text-center space-y-6 mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-tech font-bold">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-semibold">
               <span className="text-foreground">Choose Your Budget –</span>
               <br />
               <span className="neon-text">Transparent Pricing</span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground font-medium">
               Flexible plans based on your monthly ad spend
             </p>
           </div>
@@ -198,7 +198,7 @@ export const PricingSection = () => {
 
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {plans.map((plan, index) => <Card key={index} className={`relative ${plan.popular ? 'neon-border bg-card/95' : 'border-border bg-card/90'} hover:scale-105 transition-all duration-300`}>
+            {plans.map((plan, index) => <Card key={index} className={`relative ${plan.popular ? 'neon-border bg-gradient-to-br from-accent/5 via-card/95 to-primary/5 backdrop-blur-sm shadow-lg shadow-accent/10' : 'border-border bg-card/90'} hover:scale-105 transition-all duration-300`}>
                 {plan.popular && <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
                       MOST POPULAR

@@ -18,9 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        neon: "bg-accent text-accent-foreground hover:bg-accent/90 neon-glow hover:animate-pulse-neon font-tech font-bold",
-        neonOutline: "border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-accent-foreground neon-border hover:animate-pulse-neon font-tech font-bold",
-        call: "bg-accent text-accent-foreground hover:bg-accent/90 neon-glow hover:animate-pulse-neon font-tech font-bold text-lg px-8 py-4",
+        neon: "bg-accent text-accent-foreground hover:bg-accent/90 neon-glow hover:animate-pulse-neon font-heading font-semibold",
+        neonOutline: "border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-accent-foreground neon-border hover:animate-pulse-neon font-heading font-semibold",
+        call: "bg-accent text-accent-foreground hover:bg-accent/90 neon-glow hover:animate-pulse-neon font-heading font-semibold text-lg px-8 py-4",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -12,12 +12,12 @@ export const Footer = () => {
           {/* Main Footer Content */}
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-tech font-bold neon-text mb-4">
+              <h3 className="text-2xl font-heading font-semibold neon-text mb-4">
                 About AdsMet
               </h3>
               <p className="text-muted-foreground mb-4">
-                AI-driven Meta Ads agency delivering guaranteed results 
-                with transparent pricing and instant response.
+                AI-driven Performance Marketing agency delivering guaranteed results 
+                with transparent pricing and instant response through Google Ads and Meta Ads.
               </p>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center space-x-2">
@@ -83,7 +83,7 @@ export const Footer = () => {
           <div className="mt-8 pt-6 border-t border-border/50">
             <p className="text-xs text-muted-foreground text-center">
               Results may vary. Money-back guarantee applies only if zero leads are generated within the first 30 days. 
-              AdsMet is not affiliated with Meta Platforms, Inc.
+              AdsMet is not affiliated with Meta Platforms, Inc. or Google LLC.
             </p>
           </div>
         </div>

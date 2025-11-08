@@ -22,10 +22,10 @@ export const ClientLogos = () => {
   return (
     <section className="py-16 bg-secondary/50 overflow-hidden">
       <div className="container mx-auto px-4 mb-8">
-        <h2 className="text-3xl font-tech font-bold text-center neon-text">
+        <h2 className="text-3xl font-heading font-semibold text-center neon-text">
           Brands That Trust Us
         </h2>
-        <p className="text-center text-muted-foreground mt-2">
+        <p className="text-center text-muted-foreground mt-2 font-medium">
           Join industry leaders who trust AdsMet for their growth
         </p>
       </div>

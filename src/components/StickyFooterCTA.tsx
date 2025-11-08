@@ -87,7 +87,7 @@ export const StickyFooterCTA = () => {
               {/* Mobile Layout */}
               <div className="block md:hidden">
                 <div className="text-center mb-3">
-                  <h3 className="text-sm font-tech font-bold neon-text">Get Instant AI Call</h3>
+                  <h3 className="text-sm font-heading font-semibold neon-text">Get Instant AI Call</h3>
                   <p className="text-xs text-muted-foreground">Free consultation • No commitment</p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-2">

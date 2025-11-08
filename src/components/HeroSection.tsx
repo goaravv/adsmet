@@ -96,7 +96,7 @@ export const HeroSection = () => {
               
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 font-medium">
                 Unlock Strategic, AI-Powered <span className="text-accent font-semibold">Google Ads & Meta Ads</span> Campaigns That Drive{" "}
-                <span className="text-accent font-semibold">Real Results</span>
+                <span className="text-accent font-semibold">Real ROI</span> and <span className="text-accent font-semibold">Measurable Growth</span>
               </p>
             </div>
 
@@ -138,7 +138,7 @@ export const HeroSection = () => {
             <Card className="neon-border bg-card/95 backdrop-blur-sm">
               <CardContent className="p-3 sm:p-4 lg:p-6">
                 <div className="text-center mb-3 sm:mb-4 lg:mb-6">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-tech font-bold mb-1 sm:mb-2">Get Your Free Strategy Call</h3>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-heading font-semibold mb-1 sm:mb-2">Get Your Free Strategy Call</h3>
                   <p className="text-xs sm:text-xs lg:text-sm text-muted-foreground">AI will call you instantly after submission</p>
                 </div>
                 
