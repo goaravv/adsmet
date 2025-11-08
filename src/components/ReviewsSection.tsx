@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Star, User } from "lucide-react";
+import sarahImage from "@/assets/review-sarah.jpg";
+import michaelImage from "@/assets/review-michael.png";
+import emilyImage from "@/assets/review-emily.jpg";
 
 interface Review {
   id: number;
@@ -9,6 +12,7 @@ interface Review {
   review: string;
   rating: number;
   avatar: string;
+  image?: string;
 }
 
 const REVIEWS: Review[] = [
@@ -18,7 +22,8 @@ const REVIEWS: Review[] = [
     company: "TechStart Inc.",
     review: "The AI-driven campaigns transformed our marketing ROI. We saw a 320% increase in qualified leads within the first month. Their team is incredibly responsive and data-driven.",
     rating: 5,
-    avatar: "SJ"
+    avatar: "SJ",
+    image: sarahImage
   },
   {
     id: 2,
@@ -26,7 +31,8 @@ const REVIEWS: Review[] = [
     company: "GrowthScale Solutions",
     review: "Outstanding results! The performance marketing strategies they implemented reduced our cost per acquisition by 65% while doubling our conversion rate. Highly recommended!",
     rating: 5,
-    avatar: "MC"
+    avatar: "MC",
+    image: michaelImage
   },
   {
     id: 3,
@@ -34,7 +40,8 @@ const REVIEWS: Review[] = [
     company: "Digital Ventures Ltd.",
     review: "Professional, efficient, and results-oriented. Their AI optimization helped us scale our campaigns profitably. Best marketing agency we've worked with.",
     rating: 5,
-    avatar: "ER"
+    avatar: "ER",
+    image: emilyImage
   },
   {
     id: 4,
@@ -99,9 +106,17 @@ export const ReviewsSection = () => {
                     </p>
                     
                     <div className="flex items-center gap-4 border-t border-border/30 pt-4">
-                      <div className="w-12 h-12 rounded-full bg-[hsl(82,85%,60%)] flex items-center justify-center">
-                        <span className="text-background font-heading font-semibold text-sm">{review.avatar}</span>
-                      </div>
+                      {review.image ? (
+                        <img 
+                          src={review.image} 
+                          alt={`${review.name} profile`} 
+                          className="w-12 h-12 rounded-full object-cover border-2 border-[hsl(82,85%,60%)]"
+                        />
+                      ) : (
+                        <div className="w-12 h-12 rounded-full bg-[hsl(82,85%,60%)] flex items-center justify-center">
+                          <span className="text-background font-heading font-semibold text-sm">{review.avatar}</span>
+                        </div>
+                      )}
                       <div>
                         <p className="font-heading font-semibold text-foreground text-lg">{review.name}</p>
                         <p className="text-muted-foreground font-medium">{review.company}</p>
@@ -149,9 +164,17 @@ export const ReviewsSection = () => {
               </p>
               
               <div className="flex items-center gap-3 border-t border-border/30 pt-3">
-                <div className="w-10 h-10 rounded-full bg-[hsl(82,85%,60%)] flex items-center justify-center flex-shrink-0">
-                  <span className="text-background font-heading font-semibold text-xs">{review.avatar}</span>
-                </div>
+                {review.image ? (
+                  <img 
+                    src={review.image} 
+                    alt={`${review.name} profile`} 
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[hsl(82,85%,60%)] flex-shrink-0"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-[hsl(82,85%,60%)] flex items-center justify-center flex-shrink-0">
+                    <span className="text-background font-heading font-semibold text-xs">{review.avatar}</span>
+                  </div>
+                )}
                 <div>
                   <p className="font-heading font-semibold text-foreground">{review.name}</p>
                   <p className="text-sm text-muted-foreground font-medium">{review.company}</p>

@@ -26,7 +26,7 @@ export const Header = () => {
             className="text-sm md:text-base px-4 md:px-6"
           >
             <Phone className="w-4 h-4 mr-2 text-black" />
-            Call Me Now
+            Contact Us
           </Button>
         </div>
       </div>

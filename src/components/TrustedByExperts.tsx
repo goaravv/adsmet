@@ -53,15 +53,15 @@ export const TrustedByExperts = () => {
           </h2>
         </header>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-stretch">
           {/* Left Column - Live Campaign Performance */}
           <article className="relative rounded-xl border-2 border-[#1F8FFF] bg-card backdrop-blur-sm p-4 md:p-6">
-            <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
+            <h3 className="text-base md:text-lg lg:text-xl font-heading font-semibold mb-4 text-foreground">
               Live Campaign Performance
             </h3>
-            <div className="h-72 rounded-lg bg-background/50 p-3 border border-border/30">
+            <div className="h-64 md:h-72 rounded-lg bg-background/50 p-2 md:p-3 border border-border/30">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data}>
+                <LineChart data={data} margin={{ left: -20, right: 10, top: 5, bottom: 5 }}>
                   <defs>
                     <linearGradient id="colorCTR" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="hsl(82, 85%, 60%)" stopOpacity={0.3}/>
@@ -73,8 +73,8 @@ export const TrustedByExperts = () => {
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-                  <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" style={{ fontSize: '12px', fontWeight: 600 }} />
-                  <YAxis stroke="hsl(var(--muted-foreground))" domain={[0, "dataMax + 1"]} style={{ fontSize: '12px', fontWeight: 600 }} />
+                  <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" style={{ fontSize: '10px', fontWeight: 600 }} tick={{ fontSize: 10 }} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" domain={[0, "dataMax + 1"]} style={{ fontSize: '10px', fontWeight: 600 }} tick={{ fontSize: 10 }} />
                   <Tooltip contentStyle={{
                   background: 'hsl(var(--card))',
                   borderColor: 'hsl(82, 85%, 60%)',
@@ -88,14 +88,14 @@ export const TrustedByExperts = () => {
                   color: 'hsl(var(--foreground))',
                   fontWeight: 600
                 }} formatter={(value, name) => [`${value}${name === 'CTR' ? '%' : ''}`, name]} />
-                  <Line type="monotone" dataKey="CTR" stroke="hsl(82, 85%, 60%)" strokeWidth={3} dot={{
-                  r: 5,
+                  <Line type="monotone" dataKey="CTR" stroke="hsl(82, 85%, 60%)" strokeWidth={2} dot={{
+                  r: 4,
                   fill: 'hsl(82, 85%, 60%)',
                   strokeWidth: 2,
                   stroke: 'hsl(var(--card))'
                 }} fill="url(#colorCTR)" />
-                  <Line type="monotone" dataKey="ROAS" stroke="hsl(40, 100%, 60%)" strokeWidth={3} dot={{
-                  r: 5,
+                  <Line type="monotone" dataKey="ROAS" stroke="hsl(40, 100%, 60%)" strokeWidth={2} dot={{
+                  r: 4,
                   fill: 'hsl(40, 100%, 60%)',
                   strokeWidth: 2,
                   stroke: 'hsl(var(--card))'
@@ -103,7 +103,7 @@ export const TrustedByExperts = () => {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <p className="mt-4 text-sm md:text-base text-muted-foreground font-heading font-medium">
+            <p className="mt-4 text-xs md:text-sm lg:text-base text-muted-foreground font-heading font-medium">
               Average CTR This Week: {" "}
               <span className="text-[hsl(82,85%,60%)] font-heading font-semibold">{avgCTR}% ↑</span>
             </p>
@@ -111,17 +111,17 @@ export const TrustedByExperts = () => {
 
           {/* Right Column - AI Workflow Visualizer */}
           <article className="relative rounded-xl border-2 border-[#1F8FFF] bg-card backdrop-blur-sm p-4 md:p-6 flex flex-col">
-            <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
+            <h3 className="text-base md:text-lg lg:text-xl font-heading font-semibold mb-4 text-foreground">
               AI Workflow Visualizer
             </h3>
-            <div className="flex-1 flex flex-col items-center gap-4 md:gap-6 mt-2">
+            <div className="flex-1 flex flex-col items-center gap-3 md:gap-4 lg:gap-6 mt-2">
               {workflowSteps.map((step, i) => <div key={step} className="relative w-full max-w-xs">
-                  <div className="bg-card/50 text-foreground px-5 py-3 rounded-md border-2 border-[hsl(82,85%,60%)] animate-enter text-center" style={{
+                  <div className="bg-card/50 text-foreground px-4 py-2 md:px-5 md:py-3 rounded-md border-2 border-[hsl(82,85%,60%)] animate-enter text-center" style={{
                     animationDelay: `${i * 150}ms`
                   }}>
-                    <span className="font-heading font-medium text-sm md:text-base">{step}</span>
+                    <span className="font-heading font-medium text-xs md:text-sm lg:text-base">{step}</span>
                   </div>
-                  {i < workflowSteps.length - 1 && <div className="absolute left-1/2 -translate-x-1/2 top-full w-0.5 h-4 md:h-6 bg-gradient-to-b from-[hsl(82,85%,60%)] to-accent animate-fade-in" style={{
+                  {i < workflowSteps.length - 1 && <div className="absolute left-1/2 -translate-x-1/2 top-full w-0.5 h-3 md:h-4 lg:h-6 bg-gradient-to-b from-[hsl(82,85%,60%)] to-accent animate-fade-in" style={{
                 animationDelay: `${i * 150 + 120}ms`
               }} />}
                 </div>)}

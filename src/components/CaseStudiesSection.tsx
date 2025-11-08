@@ -157,22 +157,22 @@ export const CaseStudiesSection: React.FC = () => {
         <div className="relative max-w-6xl mx-auto rounded-xl border-2 border-[#1F8FFF] bg-card text-card-foreground overflow-hidden animate-fade-in backdrop-blur-sm" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
           
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 p-4 md:p-6">
-            {current.stats.map((s, i) => <div key={i} className="rounded-lg border-2 border-[hsl(82,85%,60%)] bg-card/50 p-4 md:p-5 text-center hover:border-[hsl(82,85%,70%)] transition-all duration-300 hover:scale-105">
-                <h3 className="text-xs md:text-sm font-heading font-medium text-[hsl(82,85%,60%)] mb-2">{s.title}</h3>
-                <p className="text-2xl md:text-3xl font-heading font-semibold mt-1 text-foreground">{s.value}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 lg:gap-6 p-4 md:p-6">
+            {current.stats.map((s, i) => <div key={i} className="rounded-lg border-2 border-[hsl(82,85%,60%)] bg-card/50 p-3 md:p-4 lg:p-5 text-center hover:border-[hsl(82,85%,70%)] transition-all duration-300 hover:scale-105">
+                <h3 className="text-xs md:text-sm font-heading font-medium text-[hsl(82,85%,60%)] mb-1 md:mb-2">{s.title}</h3>
+                <p className="text-xl md:text-2xl lg:text-3xl font-heading font-semibold mt-1 text-foreground">{s.value}</p>
               </div>)}
           </div>
 
           {/* Main area */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 p-4 md:p-6">
           {/* Chart */}
-          <div className="md:col-span-2 rounded-lg border border-border/30 bg-background/50 p-5 md:p-6">
-            <h3 className="text-base md:text-lg font-heading font-semibold mb-4 text-foreground">Performance Overview</h3>
-            <div className="h-56 md:h-72 rounded-lg bg-background/50 p-3 border border-border/30">
+          <div className="md:col-span-2 rounded-lg border border-border/30 bg-background/50 p-4 md:p-5 lg:p-6">
+            <h3 className="text-sm md:text-base lg:text-lg font-heading font-semibold mb-3 md:mb-4 text-foreground">Performance Overview</h3>
+            <div className="h-48 md:h-56 lg:h-72 rounded-lg bg-background/50 p-2 md:p-3 border border-border/30">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={current.chartData} margin={{
-                  left: 4,
+                  left: -20,
                   right: 8,
                   top: 8,
                   bottom: 0
@@ -184,8 +184,8 @@ export const CaseStudiesSection: React.FC = () => {
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-                    <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem', fontWeight: 600 }} />
-                    <YAxis stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem', fontWeight: 600 }} />
+                    <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.75rem', fontWeight: 600 }} tick={{ fontSize: 12 }} />
+                    <YAxis stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.75rem', fontWeight: 600 }} tick={{ fontSize: 12 }} />
                     <Tooltip contentStyle={{
                     background: "hsl(var(--card))",
                     border: "2px solid hsl(82, 85%, 60%)",
@@ -197,16 +197,16 @@ export const CaseStudiesSection: React.FC = () => {
                   }} itemStyle={{
                     fontWeight: 600
                   }} />
-            <Line type="monotone" dataKey="leads" stroke="hsl(82, 85%, 60%)" strokeWidth={3} dot={{ fill: 'hsl(82, 85%, 60%)', r: 5, strokeWidth: 2, stroke: 'hsl(var(--card))' }} activeDot={{ r: 7 }} fill="url(#gradientLeads)" />
+            <Line type="monotone" dataKey="leads" stroke="hsl(82, 85%, 60%)" strokeWidth={2} dot={{ fill: 'hsl(82, 85%, 60%)', r: 4, strokeWidth: 2, stroke: 'hsl(var(--card))' }} activeDot={{ r: 6 }} fill="url(#gradientLeads)" />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
             </div>
 
             {/* Description */}
-            <aside className="rounded-lg border border-border/30 bg-background/50 p-5 md:p-6">
-              <h3 className="text-base md:text-lg font-heading font-semibold mb-3 text-foreground">Campaign Insights</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-medium">{current.description}</p>
+            <aside className="rounded-lg border border-border/30 bg-background/50 p-4 md:p-5 lg:p-6">
+              <h3 className="text-sm md:text-base lg:text-lg font-heading font-semibold mb-2 md:mb-3 text-foreground">Campaign Insights</h3>
+              <p className="text-xs md:text-sm lg:text-base text-muted-foreground leading-relaxed font-medium">{current.description}</p>
             </aside>
           </div>
 
