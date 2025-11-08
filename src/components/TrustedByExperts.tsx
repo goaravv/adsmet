@@ -55,51 +55,77 @@ export const TrustedByExperts = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left Column - Live Campaign Performance */}
-          <article className="neon-border bg-gradient-to-br from-accent/10 via-card/90 to-primary/10 backdrop-blur-sm rounded-lg border border-accent/40 p-4 md:p-6 shadow-lg shadow-accent/20">
-            <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
+          <article className="relative rounded-2xl border-2 border-accent/40 bg-gradient-to-br from-[hsl(220,70%,10%)] via-[hsl(220,80%,8%)] to-[hsl(220,90%,6%)] backdrop-blur-sm p-4 md:p-6 shadow-[0_0_30px_hsl(210,100%,56%,0.3)] overflow-hidden">
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-[hsl(280,100%,50%)]/10 pointer-events-none"></div>
+            
+            <h3 className="relative text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
               Live Campaign Performance
             </h3>
-            <div className="h-72">
+            <div className="relative h-72 rounded-lg bg-[hsl(220,70%,5%)]/50 p-3 border border-accent/20">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                  <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" />
-                  <YAxis stroke="hsl(var(--muted-foreground))" domain={[0, "dataMax + 1"]} />
+                  <defs>
+                    <linearGradient id="colorCTR" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="hsl(180, 100%, 50%)" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="hsl(180, 100%, 50%)" stopOpacity={0}/>
+                    </linearGradient>
+                    <linearGradient id="colorROAS" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="hsl(40, 100%, 60%)" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="hsl(40, 100%, 60%)" stopOpacity={0}/>
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+                  <XAxis dataKey="name" stroke="hsl(180, 100%, 70%)" style={{ fontSize: '12px', fontWeight: 600 }} />
+                  <YAxis stroke="hsl(180, 100%, 70%)" domain={[0, "dataMax + 1"]} style={{ fontSize: '12px', fontWeight: 600 }} />
                   <Tooltip contentStyle={{
-                  background: 'hsl(var(--card))',
-                  borderColor: 'hsl(var(--border))',
-                  color: 'hsl(var(--foreground))'
+                  background: 'hsl(220, 70%, 8%)',
+                  borderColor: 'hsl(180, 100%, 50%)',
+                  color: 'hsl(var(--foreground))',
+                  borderRadius: '8px',
+                  border: '2px solid'
                 }} labelStyle={{
-                  color: 'hsl(var(--muted-foreground))'
+                  color: 'hsl(180, 100%, 70%)',
+                  fontWeight: 600
                 }} itemStyle={{
-                  color: 'hsl(var(--foreground))'
+                  color: 'hsl(var(--foreground))',
+                  fontWeight: 600
                 }} formatter={(value, name) => [`${value}${name === 'CTR' ? '%' : ''}`, name]} />
-                  <Line type="monotone" dataKey="CTR" stroke="hsl(var(--foreground))" strokeWidth={2} dot={{
-                  r: 4
-                }} />
-                  <Line type="monotone" dataKey="ROAS" stroke="hsl(var(--accent))" strokeWidth={2} dot={{
-                  r: 4
-                }} />
+                  <Line type="monotone" dataKey="CTR" stroke="hsl(180, 100%, 50%)" strokeWidth={3} dot={{
+                  r: 5,
+                  fill: 'hsl(180, 100%, 50%)',
+                  strokeWidth: 2,
+                  stroke: 'hsl(220, 70%, 10%)'
+                }} fill="url(#colorCTR)" />
+                  <Line type="monotone" dataKey="ROAS" stroke="hsl(40, 100%, 60%)" strokeWidth={3} dot={{
+                  r: 5,
+                  fill: 'hsl(40, 100%, 60%)',
+                  strokeWidth: 2,
+                  stroke: 'hsl(220, 70%, 10%)'
+                }} fill="url(#colorROAS)" />
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <p className="mt-4 text-sm md:text-base text-muted-foreground font-medium">
+            <p className="relative mt-4 text-sm md:text-base text-muted-foreground font-heading font-medium">
               Average CTR This Week: {" "}
-              <span className="text-accent font-heading font-semibold">{avgCTR}% ↑</span>
+              <span className="text-[hsl(180,100%,50%)] font-heading font-semibold drop-shadow-[0_0_8px_hsl(180,100%,50%)]">{avgCTR}% ↑</span>
             </p>
           </article>
 
           {/* Right Column - AI Workflow Visualizer */}
-          <article className="neon-border bg-gradient-to-br from-primary/10 via-card/90 to-accent/10 backdrop-blur-sm rounded-lg border border-accent/40 p-4 md:p-6 flex flex-col shadow-lg shadow-primary/20">
-            <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
+          <article className="relative rounded-2xl border-2 border-accent/40 bg-gradient-to-br from-[hsl(220,70%,10%)] via-[hsl(220,80%,8%)] to-[hsl(220,90%,6%)] backdrop-blur-sm p-4 md:p-6 flex flex-col shadow-[0_0_30px_hsl(280,100%,50%,0.3)] overflow-hidden">
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-bl from-[hsl(280,100%,50%)]/10 via-transparent to-accent/10 pointer-events-none"></div>
+            
+            <h3 className="relative text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
               AI Workflow Visualizer
             </h3>
-            <div className="flex-1 flex flex-col items-center gap-4 md:gap-6 mt-2">
-              {workflowSteps.map((step, i) => <div key={step} className="relative bg-muted/30 text-foreground px-5 py-3 rounded-md border border-[hsl(210,100%,56%)] animate-enter" style={{
+            <div className="relative flex-1 flex flex-col items-center gap-4 md:gap-6 mt-2">
+              {workflowSteps.map((step, i) => <div key={step} className="relative bg-gradient-to-r from-[hsl(220,70%,15%)] to-[hsl(220,80%,12%)] text-foreground px-5 py-3 rounded-md border-2 border-[hsl(180,100%,56%)] shadow-[0_0_15px_hsl(180,100%,56%,0.4)] animate-enter w-full max-w-xs text-center" style={{
               animationDelay: `${i * 150}ms`
             }}>
-                  <span className="font-heading font-medium">{step}</span>
-                  {i < workflowSteps.length - 1 && <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-px h-5 bg-foreground animate-fade-in" style={{
+                  <span className="font-heading font-medium text-sm md:text-base">{step}</span>
+                  {i < workflowSteps.length - 1 && <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-0.5 h-5 bg-gradient-to-b from-[hsl(180,100%,56%)] to-[hsl(280,100%,56%)] animate-fade-in shadow-[0_0_8px_hsl(180,100%,56%)]" style={{
                 animationDelay: `${i * 150 + 120}ms`
               }} />}
                 </div>)}

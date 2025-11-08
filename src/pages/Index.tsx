@@ -9,6 +9,7 @@ import { StickyFooterCTA } from "@/components/StickyFooterCTA";
 import { Footer } from "@/components/Footer";
 import { CaseStudiesSection } from "@/components/CaseStudiesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
         <CalendarSection />
         <CaseStudiesSection />
         <PortfolioSection />
+        <ReviewsSection />
         <PricingSection />
         <StickyFooterCTA />
         <Footer />
