@@ -36,7 +36,7 @@ const REVIEWS: Review[] = [
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
+    name: "Emilio Rodriguez",
     company: "Digital Ventures Ltd.",
     review: "Professional, efficient, and results-oriented. Their AI optimization helped us scale our campaigns profitably. Best marketing agency we've worked with.",
     rating: 5,
