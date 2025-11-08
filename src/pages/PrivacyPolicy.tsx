@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
       <main className="pt-16 md:pt-20">
         <article className="container mx-auto px-4 py-12 md:py-16 text-foreground">
           <motion.h1
-            className="text-4xl font-tech font-bold mb-8 text-center text-accent"
+            className="text-4xl font-heading font-semibold mb-8 text-center text-accent"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -49,36 +49,36 @@ const PrivacyPolicy = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <p>
+            <p className="font-medium">
               At AdsMet, an AI-Driven Meta Ads Agency, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data.
             </p>
 
-            <h2 className="text-2xl font-semibold text-accent">1. Information We Collect</h2>
-            <p>
+            <h2 className="text-2xl font-heading font-semibold text-accent">1. Information We Collect</h2>
+            <p className="font-medium">
               We may collect personal information such as your name, email address, billing details, and advertising account data to provide and improve our services.
             </p>
 
-            <h2 className="text-2xl font-semibold text-accent">2. How We Use Your Information</h2>
-            <p>
+            <h2 className="text-2xl font-heading font-semibold text-accent">2. How We Use Your Information</h2>
+            <p className="font-medium">
               Your data is used to deliver AI-powered advertising solutions, optimize ad campaigns, communicate with you, and comply with legal requirements.
             </p>
 
-            <h2 className="text-2xl font-semibold text-accent">3. Data Security</h2>
-            <p>
+            <h2 className="text-2xl font-heading font-semibold text-accent">3. Data Security</h2>
+            <p className="font-medium">
               We implement industry-standard measures to protect your data against unauthorized access, alteration, disclosure, or destruction.
             </p>
 
-            <h2 className="text-2xl font-semibold text-accent">4. Sharing Your Information</h2>
-            <p>
+            <h2 className="text-2xl font-heading font-semibold text-accent">4. Sharing Your Information</h2>
+            <p className="font-medium">
               We do not sell or rent your personal data. We may share information with trusted partners or service providers as needed to operate our business and deliver our services.
             </p>
 
-            <h2 className="text-2xl font-semibold text-accent">5. Changes to This Policy</h2>
-            <p>
+            <h2 className="text-2xl font-heading font-semibold text-accent">5. Changes to This Policy</h2>
+            <p className="font-medium">
               AdsMet may update this Privacy Policy periodically. Changes will be posted on our website, and continued use of our services constitutes acceptance of the updated policy.
             </p>
 
-            <p>
+            <p className="font-medium">
               If you have questions regarding this Privacy Policy, please contact us at support@adsmet.agency.
             </p>
           </motion.section>

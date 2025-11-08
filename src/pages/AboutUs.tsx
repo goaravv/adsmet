@@ -48,7 +48,7 @@ const AboutUs = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-tech font-bold text-foreground">
+            <h1 className="text-4xl md:text-5xl font-heading font-semibold text-foreground">
               <span className="text-accent">About Us</span>
             </h1>
           </motion.section>
@@ -63,8 +63,8 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl md:text-3xl font-tech font-bold">About AdsMet</h2>
-              <p className="leading-relaxed text-muted-foreground">
+              <h2 className="text-2xl md:text-3xl font-heading font-semibold">About AdsMet</h2>
+              <p className="leading-relaxed text-muted-foreground font-medium">
                 AdsMet is revolutionizing digital advertising with AI-driven insights, optimizing ad spend, and delivering unmatched Return on Ad Spend (ROAS). Our platform seamlessly integrates with your campaigns, ensuring you get the most value for every dollar spent.
               </p>
             </motion.div>
@@ -78,8 +78,8 @@ const AboutUs = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center justify-between text-foreground">
-                <span className="font-medium">Meta Ads Manager Clone</span>
-                <div className="flex items-center space-x-1 px-2 py-1 rounded-full text-xs font-medium bg-accent text-accent-foreground">
+                <span className="font-heading font-medium">Meta Ads Manager Clone</span>
+                <div className="flex items-center space-x-1 px-2 py-1 rounded-full text-xs font-heading font-medium bg-accent text-accent-foreground">
                   <Sparkles size={14} />
                   <span>AI Integrated</span>
                 </div>
@@ -95,14 +95,14 @@ const AboutUs = () => {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.2 }}
                   >
-                    <div className="text-2xl font-tech font-bold">{m.prefix || ''}{m.value}{m.suffix || ''}</div>
-                    <div className="text-xs text-accent">{m.label}</div>
+                    <div className="text-2xl font-heading font-semibold">{m.prefix || ''}{m.value}{m.suffix || ''}</div>
+                    <div className="text-xs font-heading font-medium text-accent">{m.label}</div>
                   </motion.div>
                 ))}
               </div>
 
               <div>
-                <div className="flex items-center mb-2 text-sm font-medium text-foreground">
+                <div className="flex items-center mb-2 text-sm font-heading font-medium text-foreground">
                   Growth
                   <TrendingUp className="ml-1" size={16} />
                 </div>
@@ -145,8 +145,8 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl md:text-3xl font-tech font-bold text-accent">About the Founder</h2>
-              <p className="text-muted-foreground">
+              <h2 className="text-2xl md:text-3xl font-heading font-semibold text-accent">About the Founder</h2>
+              <p className="text-muted-foreground font-medium">
                 Hi, I'm Gaurav Sharma — the driving force behind AdsMet.com, an AI-powered Meta Ads Agency. With over 6 years in the digital marketing arena, I’ve scaled multiple projects to achieve triple their revenue and maintain a consistent 2–3x ROAS. My mission is to blend human creativity with AI precision for exceptional advertising results.
               </p>
               <div className="flex items-center gap-4 pt-2">
