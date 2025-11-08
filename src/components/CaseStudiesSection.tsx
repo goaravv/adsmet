@@ -154,24 +154,22 @@ export const CaseStudiesSection: React.FC = () => {
           </p>
         </header>
 
-        <div className="relative max-w-6xl mx-auto rounded-2xl border-2 border-accent/40 bg-gradient-to-br from-[hsl(220,70%,10%)] via-[hsl(220,80%,8%)] to-[hsl(220,90%,6%)] text-card-foreground shadow-[0_0_40px_hsl(210,100%,56%,0.25)] overflow-hidden animate-fade-in backdrop-blur-sm" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-          {/* Background gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-[hsl(280,100%,50%)]/10 pointer-events-none"></div>
+        <div className="relative max-w-6xl mx-auto rounded-xl border border-border/50 bg-card text-card-foreground overflow-hidden animate-fade-in backdrop-blur-sm" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
           
           {/* Stats */}
-          <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 p-4 md:p-6">
-            {current.stats.map((s, i) => <div key={i} className="rounded-xl border-2 border-[hsl(180,100%,56%)] bg-gradient-to-br from-[hsl(220,70%,15%)] to-[hsl(220,80%,12%)] p-4 md:p-5 text-center hover:border-[hsl(180,100%,70%)] transition-all duration-300 hover:scale-105 shadow-[0_0_20px_hsl(180,100%,56%,0.4)]">
-                <h3 className="text-xs md:text-sm font-heading font-medium text-[hsl(180,100%,70%)] mb-2">{s.title}</h3>
-                <p className="text-2xl md:text-3xl font-heading font-semibold mt-1 text-foreground drop-shadow-[0_0_8px_hsl(180,100%,56%)]">{s.value}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 p-4 md:p-6">
+            {current.stats.map((s, i) => <div key={i} className="rounded-lg border-2 border-[hsl(82,85%,60%)] bg-card/50 p-4 md:p-5 text-center hover:border-[hsl(82,85%,70%)] transition-all duration-300 hover:scale-105">
+                <h3 className="text-xs md:text-sm font-heading font-medium text-[hsl(82,85%,60%)] mb-2">{s.title}</h3>
+                <p className="text-2xl md:text-3xl font-heading font-semibold mt-1 text-foreground">{s.value}</p>
               </div>)}
           </div>
 
           {/* Main area */}
-        <div className="relative grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
           {/* Chart */}
-          <div className="md:col-span-2 rounded-xl border-2 border-[hsl(180,100%,56%)] bg-gradient-to-br from-[hsl(220,70%,12%)] to-[hsl(220,80%,8%)] p-5 md:p-6 shadow-[0_0_25px_hsl(180,100%,56%,0.4)]">
+          <div className="md:col-span-2 rounded-lg border border-border/30 bg-background/50 p-5 md:p-6">
             <h3 className="text-base md:text-lg font-heading font-semibold mb-4 text-foreground">Performance Overview</h3>
-            <div className="h-56 md:h-72 rounded-lg bg-[hsl(220,70%,5%)]/50 p-3 border border-accent/20">
+            <div className="h-56 md:h-72 rounded-lg bg-background/50 p-3 border border-border/30">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={current.chartData} margin={{
                   left: 4,
@@ -181,33 +179,32 @@ export const CaseStudiesSection: React.FC = () => {
                 }}>
                     <defs>
                       <linearGradient id="gradientLeads" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="hsl(40, 100%, 60%)" stopOpacity={0.4}/>
-                        <stop offset="95%" stopColor="hsl(40, 100%, 60%)" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="hsl(82, 85%, 60%)" stopOpacity={0.4}/>
+                        <stop offset="95%" stopColor="hsl(82, 85%, 60%)" stopOpacity={0}/>
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-                    <XAxis dataKey="date" stroke="hsl(180, 100%, 70%)" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem', fontWeight: 600 }} />
-                    <YAxis stroke="hsl(180, 100%, 70%)" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem', fontWeight: 600 }} />
+                    <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem', fontWeight: 600 }} />
+                    <YAxis stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem', fontWeight: 600 }} />
                     <Tooltip contentStyle={{
-                    background: "hsl(220, 70%, 8%)",
-                    border: "2px solid hsl(180, 100%, 50%)",
+                    background: "hsl(var(--card))",
+                    border: "2px solid hsl(82, 85%, 60%)",
                     color: "hsl(var(--card-foreground))",
-                    borderRadius: '0.5rem',
-                    boxShadow: '0 0 20px hsl(180, 100%, 50%, 0.4)'
+                    borderRadius: '0.5rem'
                   }} labelStyle={{
-                    color: 'hsl(180, 100%, 70%)',
+                    color: 'hsl(82, 85%, 60%)',
                     fontWeight: 600
                   }} itemStyle={{
                     fontWeight: 600
                   }} />
-            <Line type="monotone" dataKey="leads" stroke="hsl(40, 100%, 60%)" strokeWidth={3} dot={{ fill: 'hsl(40, 100%, 60%)', r: 5, strokeWidth: 2, stroke: 'hsl(220, 70%, 10%)' }} activeDot={{ r: 7 }} fill="url(#gradientLeads)" />
+            <Line type="monotone" dataKey="leads" stroke="hsl(82, 85%, 60%)" strokeWidth={3} dot={{ fill: 'hsl(82, 85%, 60%)', r: 5, strokeWidth: 2, stroke: 'hsl(var(--card))' }} activeDot={{ r: 7 }} fill="url(#gradientLeads)" />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
             </div>
 
             {/* Description */}
-            <aside className="rounded-xl border-2 border-[hsl(280,100%,56%)] bg-gradient-to-br from-[hsl(220,70%,12%)] to-[hsl(220,80%,8%)] p-5 md:p-6 shadow-[0_0_25px_hsl(280,100%,56%,0.4)]">
+            <aside className="rounded-lg border border-border/30 bg-background/50 p-5 md:p-6">
               <h3 className="text-base md:text-lg font-heading font-semibold mb-3 text-foreground">Campaign Insights</h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-medium">{current.description}</p>
             </aside>
