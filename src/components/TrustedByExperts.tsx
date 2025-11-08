@@ -55,7 +55,7 @@ export const TrustedByExperts = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left Column - Live Campaign Performance */}
-          <article className="relative rounded-xl border border-border/50 bg-card backdrop-blur-sm p-4 md:p-6">
+          <article className="relative rounded-xl border-2 border-[#1F8FFF] bg-card backdrop-blur-sm p-4 md:p-6">
             <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
               Live Campaign Performance
             </h3>
@@ -110,7 +110,7 @@ export const TrustedByExperts = () => {
           </article>
 
           {/* Right Column - AI Workflow Visualizer */}
-          <article className="relative rounded-xl border border-border/50 bg-card backdrop-blur-sm p-4 md:p-6 flex flex-col">
+          <article className="relative rounded-xl border-2 border-[#1F8FFF] bg-card backdrop-blur-sm p-4 md:p-6 flex flex-col">
             <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
               AI Workflow Visualizer
             </h3>

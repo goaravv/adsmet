@@ -87,7 +87,7 @@ export const ReviewsSection = () => {
             >
               {REVIEWS.map((review) => (
                 <div key={review.id} className="min-w-full px-4">
-                  <Card className="border border-border/50 bg-card p-8 md:p-10">
+                  <Card className="border-2 border-[#1F8FFF] bg-card p-8 md:p-10">
                     <div className="flex items-center gap-1 mb-4">
                       {Array.from({ length: review.rating }).map((_, i) => (
                         <Star key={i} className="w-5 h-5 fill-[hsl(40,100%,60%)] text-[hsl(40,100%,60%)]" />
@@ -135,7 +135,7 @@ export const ReviewsSection = () => {
           {REVIEWS.map((review, index) => (
             <Card 
               key={review.id} 
-              className="border border-border/50 bg-card p-6 animate-fade-in"
+              className="border-2 border-[#1F8FFF] bg-card p-6 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center gap-1 mb-3">

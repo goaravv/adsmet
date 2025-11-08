@@ -154,7 +154,7 @@ export const CaseStudiesSection: React.FC = () => {
           </p>
         </header>
 
-        <div className="relative max-w-6xl mx-auto rounded-xl border border-border/50 bg-card text-card-foreground overflow-hidden animate-fade-in backdrop-blur-sm" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+        <div className="relative max-w-6xl mx-auto rounded-xl border-2 border-[#1F8FFF] bg-card text-card-foreground overflow-hidden animate-fade-in backdrop-blur-sm" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
           
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 p-4 md:p-6">
