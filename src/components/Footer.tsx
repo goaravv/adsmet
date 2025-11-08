@@ -15,11 +15,11 @@ export const Footer = () => {
               <h3 className="text-2xl font-heading font-semibold neon-text mb-4">
                 About AdsMet
               </h3>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-4 font-medium">
                 AI-driven Performance Marketing agency delivering guaranteed results 
                 with transparent pricing and instant response through Google Ads and Meta Ads.
               </p>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-2 text-sm font-medium">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-accent rounded-full neon-glow"></div>
                   <span>100% Lead Generation Guaranteed</span>
@@ -37,7 +37,7 @@ export const Footer = () => {
             
             
             <div>
-              <h4 className="font-tech font-bold mb-4">Company</h4>
+              <h4 className="font-heading font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link to="/about-us" className="hover:text-accent transition-colors">About Us</Link></li>
                 <li><Link to="/terms-and-conditions" className="hover:text-accent transition-colors">Terms & Conditions</Link></li>
@@ -48,7 +48,7 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-tech font-bold mb-4">Connect</h4>
+              <h4 className="font-heading font-semibold mb-4">Connect</h4>
               <div className="flex items-center gap-4 mb-4 text-muted-foreground">
                 <a href="https://www.instagram.com/adsmet_agency/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram size={18} /></a>
                 <a href="https://www.facebook.com/adsmet.agency" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent transition-colors"><Facebook size={18} /></a>

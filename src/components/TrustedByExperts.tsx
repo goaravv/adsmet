@@ -56,7 +56,7 @@ export const TrustedByExperts = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left Column - Live Campaign Performance */}
           <article className="neon-border bg-gradient-to-br from-accent/10 via-card/90 to-primary/10 backdrop-blur-sm rounded-lg border border-accent/40 p-4 md:p-6 shadow-lg shadow-accent/20">
-            <h3 className="text-lg md:text-xl font-tech font-semibold mb-4 text-foreground">
+            <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
               Live Campaign Performance
             </h3>
             <div className="h-72">
@@ -83,22 +83,22 @@ export const TrustedByExperts = () => {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <p className="mt-4 text-sm md:text-base text-muted-foreground">
+            <p className="mt-4 text-sm md:text-base text-muted-foreground font-medium">
               Average CTR This Week: {" "}
-              <span className="text-accent font-semibold">{avgCTR}% ↑</span>
+              <span className="text-accent font-heading font-semibold">{avgCTR}% ↑</span>
             </p>
           </article>
 
           {/* Right Column - AI Workflow Visualizer */}
           <article className="neon-border bg-gradient-to-br from-primary/10 via-card/90 to-accent/10 backdrop-blur-sm rounded-lg border border-accent/40 p-4 md:p-6 flex flex-col shadow-lg shadow-primary/20">
-            <h3 className="text-lg md:text-xl font-tech font-semibold mb-4 text-foreground">
+            <h3 className="text-lg md:text-xl font-heading font-semibold mb-4 text-foreground">
               AI Workflow Visualizer
             </h3>
             <div className="flex-1 flex flex-col items-center gap-4 md:gap-6 mt-2">
               {workflowSteps.map((step, i) => <div key={step} className="relative bg-muted/30 text-foreground px-5 py-3 rounded-md border border-[hsl(210,100%,56%)] animate-enter" style={{
               animationDelay: `${i * 150}ms`
             }}>
-                  <span className="font-medium">{step}</span>
+                  <span className="font-heading font-medium">{step}</span>
                   {i < workflowSteps.length - 1 && <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-px h-5 bg-foreground animate-fade-in" style={{
                 animationDelay: `${i * 150 + 120}ms`
               }} />}

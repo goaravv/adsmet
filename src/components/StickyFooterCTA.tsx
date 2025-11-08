@@ -88,13 +88,13 @@ export const StickyFooterCTA = () => {
               <div className="block md:hidden">
                 <div className="text-center mb-3">
                   <h3 className="text-sm font-heading font-semibold neon-text">Get Instant AI Call</h3>
-                  <p className="text-xs text-muted-foreground">Free consultation • No commitment</p>
+                  <p className="text-xs text-muted-foreground font-medium">Free consultation • No commitment</p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-2">
                   <div className="grid grid-cols-2 gap-2">
                     <Input
                       placeholder="Your Name"
-                      className="text-sm bg-background/50 neon-border font-tech"
+                      className="text-sm bg-background/50 neon-border font-heading"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -102,7 +102,7 @@ export const StickyFooterCTA = () => {
                     <Input
                       type="tel"
                       placeholder="Phone Number"
-                      className="text-sm bg-background/50 neon-border font-tech"
+                      className="text-sm bg-background/50 neon-border font-heading"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
@@ -111,7 +111,7 @@ export const StickyFooterCTA = () => {
                   <Input
                     type="email"
                     placeholder="Email Address"
-                    className="text-sm bg-background/50 neon-border font-tech"
+                    className="text-sm bg-background/50 neon-border font-heading"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
@@ -128,7 +128,7 @@ export const StickyFooterCTA = () => {
                 <form onSubmit={handleSubmit} className="flex-1 flex items-center gap-2 lg:gap-3 w-full">
                   <Input
                     placeholder="Full Name"
-                    className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
+                    className="flex-1 min-w-0 bg-background/50 neon-border font-heading"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
@@ -136,7 +136,7 @@ export const StickyFooterCTA = () => {
                   <Input
                     type="tel"
                     placeholder="Phone Number"
-                    className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
+                    className="flex-1 min-w-0 bg-background/50 neon-border font-heading"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
@@ -144,7 +144,7 @@ export const StickyFooterCTA = () => {
                   <Input
                     type="email"
                     placeholder="Email Address"
-                    className="flex-1 min-w-0 bg-background/50 neon-border font-tech"
+                    className="flex-1 min-w-0 bg-background/50 neon-border font-heading"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
@@ -156,7 +156,7 @@ export const StickyFooterCTA = () => {
                 </form>
               </div>
 
-              <p className="text-xs text-center text-muted-foreground mt-2">
+              <p className="text-xs text-center text-muted-foreground font-medium mt-2">
                 AI will call you instantly • Free consultation • No commitment required
               </p>
             </CardContent>

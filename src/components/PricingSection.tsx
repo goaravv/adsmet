@@ -155,15 +155,15 @@ export const PricingSection = () => {
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="text-center">
-                    <h3 className="text-2xl font-tech font-bold mb-2">Monthly Ad Budget</h3>
-                    <div className="text-4xl font-tech font-bold neon-text">
+                    <h3 className="text-2xl font-heading font-semibold mb-2">Monthly Ad Budget</h3>
+                    <div className="text-4xl font-heading font-semibold neon-text">
                       ${currentBudget.toLocaleString()}
                     </div>
                   </div>
                   
                   <div className="space-y-4">
                     <div className="px-4 relative">
-                      <Input type="number" value={manualBudget} onChange={e => handleManualBudgetChange(e.target.value)} className="text-center text-2xl font-tech font-bold neon-border bg-background/50 pr-16" min="1000" max="100000" step="500" />
+                      <Input type="number" value={manualBudget} onChange={e => handleManualBudgetChange(e.target.value)} className="text-center text-2xl font-heading font-semibold neon-border bg-background/50 pr-16" min="1000" max="100000" step="500" />
                       <div className="absolute right-4 top-0 h-full flex flex-col">
                         <button type="button" onClick={() => {
                         const current = parseInt(manualBudget) || 1000;
@@ -185,7 +185,7 @@ export const PricingSection = () => {
                     </div>
                     <div className="px-4">
                       <Slider value={budget} onValueChange={handleSliderChange} max={100000} min={1000} step={500} className="w-full" />
-                      <div className="flex justify-between text-sm text-muted-foreground mt-2">
+                      <div className="flex justify-between text-sm text-muted-foreground font-medium mt-2">
                         <span>$1,000</span>
                         <span>$100,000</span>
                       </div>
@@ -206,12 +206,12 @@ export const PricingSection = () => {
                   </div>}
                 
                 <CardHeader className="text-center">
-                  <CardTitle className="text-2xl font-tech">{plan.title}</CardTitle>
+                  <CardTitle className="text-2xl font-heading font-semibold">{plan.title}</CardTitle>
                   <div className="space-y-2">
-                    <div className="text-4xl font-tech font-bold neon-text">
+                    <div className="text-4xl font-heading font-semibold neon-text">
                       ${calculateFee(plan.percentage).toLocaleString()}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-muted-foreground font-medium">
                       {plan.percentage}% of ad spend {plan.period}
                     </div>
                   </div>
@@ -221,7 +221,7 @@ export const PricingSection = () => {
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center space-x-3">
                         <div className="w-2 h-2 bg-accent rounded-full neon-glow"></div>
-                        <span className="text-sm">{feature}</span>
+                        <span className="text-sm font-medium">{feature}</span>
                       </li>)}
                   </ul>
                   
@@ -239,8 +239,8 @@ export const PricingSection = () => {
                 <div className="flex items-center space-x-4">
                   <Shield className="w-8 h-8 text-accent" />
                   <div>
-                    <h3 className="font-tech font-bold">💰 100% Money-Back Guarantee</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <h3 className="font-heading font-semibold">💰 100% Money-Back Guarantee</h3>
+                    <p className="text-sm text-muted-foreground font-medium">
                       Only applies if no lead is generated at all
                     </p>
                   </div>
@@ -252,7 +252,7 @@ export const PricingSection = () => {
           {/* FAQs Section */}
           <div className="mt-12 md:mt-16">
             <section aria-labelledby="faq-heading" className="max-w-3xl mx-auto">
-              <h3 id="faq-heading" className="text-2xl md:text-3xl font-tech font-bold text-foreground text-center mb-6">Frequently Asked Questions</h3>
+              <h3 id="faq-heading" className="text-2xl md:text-3xl font-heading font-semibold text-foreground text-center mb-6">Frequently Asked Questions</h3>
               <Card className="neon-border bg-card/90">
                 <CardContent className="p-4 md:p-6">
                   <Accordion type="single" collapsible className="w-full">

@@ -14,15 +14,15 @@ export const VideoSection = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-accent rounded-full neon-glow"></div>
-                <span className="font-tech">AI Campaign Optimization Suggestions</span>
+                <span className="font-heading font-medium">AI Campaign Optimization Suggestions</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-accent rounded-full neon-glow"></div>
-                <span className="font-tech">Real-time Performance Tracking</span>
+                <span className="font-heading font-medium">Real-time Performance Tracking</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-accent rounded-full neon-glow"></div>
-                <span className="font-tech">Automated Lead Qualification</span>
+                <span className="font-heading font-medium">Automated Lead Qualification</span>
               </div>
             </div>
           </div>

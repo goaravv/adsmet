@@ -106,25 +106,25 @@ export const HeroSection = () => {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto bg-accent/20 rounded-lg flex items-center justify-center neon-border">
                   <Zap className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-accent" />
                 </div>
-                <p className="text-xs sm:text-xs lg:text-sm font-tech">AI-Optimized</p>
+                <p className="text-xs sm:text-xs lg:text-sm font-heading font-medium">AI-Optimized</p>
               </div>
               <div className="text-center space-y-1 sm:space-y-2">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto bg-accent/20 rounded-lg flex items-center justify-center neon-border">
                   <Target className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-accent" />
                 </div>
-                <p className="text-xs sm:text-xs lg:text-sm font-tech">Instant Response</p>
+                <p className="text-xs sm:text-xs lg:text-sm font-heading font-medium">Instant Response</p>
               </div>
               <div className="text-center space-y-1 sm:space-y-2">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto bg-accent/20 rounded-lg flex items-center justify-center neon-border">
                   <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-accent" />
                 </div>
-                <p className="text-xs sm:text-xs lg:text-sm font-tech">Results-Driven</p>
+                <p className="text-xs sm:text-xs lg:text-sm font-heading font-medium">Results-Driven</p>
               </div>
               <div className="text-center space-y-1 sm:space-y-2">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto bg-accent/20 rounded-lg flex items-center justify-center neon-border">
                   <Phone className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-accent" />
                 </div>
-                <p className="text-xs sm:text-xs lg:text-sm font-tech">Live Call Agent</p>
+                <p className="text-xs sm:text-xs lg:text-sm font-heading font-medium">Live Call Agent</p>
               </div>
             </div>
 
@@ -139,27 +139,27 @@ export const HeroSection = () => {
               <CardContent className="p-3 sm:p-4 lg:p-6">
                 <div className="text-center mb-3 sm:mb-4 lg:mb-6">
                   <h3 className="text-base sm:text-lg lg:text-xl font-heading font-semibold mb-1 sm:mb-2">Get Your Free Strategy Call</h3>
-                  <p className="text-xs sm:text-xs lg:text-sm text-muted-foreground">AI will call you instantly after submission</p>
+                  <p className="text-xs sm:text-xs lg:text-sm text-muted-foreground font-medium">AI will call you instantly after submission</p>
                 </div>
                 
                 <form onSubmit={handleFormSubmit} className="space-y-2 sm:space-y-3 lg:space-y-4">
                   
-                  <Input name="name" placeholder="Full Name" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" required />
-                  <Input name="email" type="email" placeholder="Email Address" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" required />
-                  <Input name="phone" type="tel" placeholder="Phone Number" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" required />
-                  <Input name="website" placeholder="Website URL" className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base" />
+                  <Input name="name" placeholder="Full Name" className="neon-border bg-background/50 font-heading text-xs sm:text-sm lg:text-base" required />
+                  <Input name="email" type="email" placeholder="Email Address" className="neon-border bg-background/50 font-heading text-xs sm:text-sm lg:text-base" required />
+                  <Input name="phone" type="tel" placeholder="Phone Number" className="neon-border bg-background/50 font-heading text-xs sm:text-sm lg:text-base" required />
+                  <Input name="website" placeholder="Website URL" className="neon-border bg-background/50 font-heading text-xs sm:text-sm lg:text-base" />
                   
                   {/* Budget and Package Row */}
                   <div className="grid grid-cols-1 gap-2 sm:gap-3 lg:grid-cols-2 lg:gap-4">
                     <div>
-                      <label className="block text-xs sm:text-xs lg:text-sm font-tech text-muted-foreground mb-1 sm:mb-2">Monthly Budget ($)</label>
+                      <label className="block text-xs sm:text-xs lg:text-sm font-heading font-medium text-muted-foreground mb-1 sm:mb-2">Monthly Budget ($)</label>
                       <div className="relative">
                         <Input type="number" placeholder="e.g. 5000" value={budget} onChange={e => {
                         const value = e.target.value;
                         if (value === '' || parseInt(value) >= 1000) {
                           setBudget(value);
                         }
-                      }} className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base pr-8" min="1000" step="500" required />
+                      }} className="neon-border bg-background/50 font-heading text-xs sm:text-sm lg:text-base pr-8" min="1000" step="500" required />
                         <div className="absolute right-0 top-0 h-full flex flex-col">
                           <button type="button" onClick={() => {
                           const current = parseInt(budget) || 1000;
@@ -179,9 +179,9 @@ export const HeroSection = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs sm:text-xs lg:text-sm font-tech text-muted-foreground mb-1 sm:mb-2">Package</label>
+                      <label className="block text-xs sm:text-xs lg:text-sm font-heading font-medium text-muted-foreground mb-1 sm:mb-2">Package</label>
                       <Select value={selectedPackage} onValueChange={setSelectedPackage} required>
-                        <SelectTrigger className="neon-border bg-background/50 font-tech text-xs sm:text-sm lg:text-base h-9 sm:h-10 lg:h-11">
+                        <SelectTrigger className="neon-border bg-background/50 font-heading text-xs sm:text-sm lg:text-base h-9 sm:h-10 lg:h-11">
                           <SelectValue placeholder="Select package" />
                         </SelectTrigger>
                         <SelectContent className="bg-card border-accent">
@@ -193,7 +193,7 @@ export const HeroSection = () => {
                     </div>
                   </div>
                   
-                  <Textarea name="description" placeholder="Describe your project and goals..." className="neon-border bg-background/50 font-tech min-h-[60px] sm:min-h-[80px] lg:min-h-[100px] text-xs sm:text-sm lg:text-base" rows={3} />
+                  <Textarea name="description" placeholder="Describe your project and goals..." className="neon-border bg-background/50 font-heading min-h-[60px] sm:min-h-[80px] lg:min-h-[100px] text-xs sm:text-sm lg:text-base" rows={3} />
                   
                   <Button type="submit" variant="neon" className="w-full py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-lg" disabled={isLoading}>
                     {isLoading ? <>Loading...</> : <>
@@ -202,7 +202,7 @@ export const HeroSection = () => {
                       </>}
                   </Button>
                   
-                  <p className="text-xs text-center text-muted-foreground">
+                  <p className="text-xs text-center text-muted-foreground font-medium">
                     By submitting, you agree to receive a call from our AI agent within 30 seconds
                   </p>
                 </form>

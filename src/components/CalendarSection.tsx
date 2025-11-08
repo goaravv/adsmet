@@ -35,7 +35,7 @@ export const CalendarSection = () => {
                   <Zap className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="font-heading font-semibold mb-2">AI Analysis</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-medium">
                   Instant campaign audit and optimization recommendations
                 </p>
               </CardContent>
@@ -47,7 +47,7 @@ export const CalendarSection = () => {
                   <Clock className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="font-heading font-semibold mb-2">30-Min Strategy</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-medium">
                   Personalized growth strategy session with our experts
                 </p>
               </CardContent>
@@ -59,7 +59,7 @@ export const CalendarSection = () => {
                   <Calendar className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="font-heading font-semibold mb-2">Implementation Plan</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-medium">
                   Custom roadmap with timeline and expected results
                 </p>
               </CardContent>
@@ -87,7 +87,7 @@ export const CalendarSection = () => {
             </CardContent>
           </Card>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground font-medium">
             No commitment required • 100% Free consultation • Instant AI analysis included
           </p>
         </div>
