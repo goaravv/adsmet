@@ -10,6 +10,8 @@ import googleAds6 from "@/assets/google-ads-6.png";
 import metaAds1 from "@/assets/meta-ads-1.png";
 import metaAds2 from "@/assets/meta-ads-2.png";
 
+import { Badge } from "@/components/ui/badge";
+
 interface PortfolioItem {
   image: string;
   title: string;
@@ -29,26 +31,6 @@ const googleAdsPortfolio: PortfolioItem[] = [
       { label: "Conversions", value: "139" },
       { label: "Cost", value: "₹51.1K" },
       { label: "Conv. Rate", value: "0.24%" },
-    ],
-  },
-  {
-    image: googleAds5,
-    title: "Multi-Campaign Sales Strategy",
-    description: "Managed 21 active campaigns with optimized bidding strategies, achieving consistent results across website purchases with detailed performance tracking.",
-    metrics: [
-      { label: "Active Campaigns", value: "21" },
-      { label: "Campaign Type", value: "Website Purchase" },
-      { label: "Strategy", value: "Highest Volume" },
-    ],
-  },
-  {
-    image: googleAds6,
-    title: "Car Detailing & PPF Campaigns",
-    description: "Generated 47 high-quality leads for ceramic & PPF video ads at ₹153.91 per lead, with strong reach of 52,169 impressions.",
-    metrics: [
-      { label: "Leads", value: "47" },
-      { label: "Cost/Lead", value: "₹153.91" },
-      { label: "Impressions", value: "52.2K" },
     ],
   },
   {
@@ -102,6 +84,26 @@ const metaAdsPortfolio: PortfolioItem[] = [
       { label: "Conversations", value: "2,555" },
       { label: "Cost/Conversation", value: "₹21.71" },
       { label: "Total Spend", value: "₹55.5K" },
+    ],
+  },
+  {
+    image: googleAds5,
+    title: "Multi-Campaign Sales Strategy",
+    description: "Managed 21 active campaigns with optimized bidding strategies, achieving consistent results across website purchases with detailed performance tracking.",
+    metrics: [
+      { label: "Active Campaigns", value: "21" },
+      { label: "Campaign Type", value: "Website Purchase" },
+      { label: "Strategy", value: "Highest Volume" },
+    ],
+  },
+  {
+    image: googleAds6,
+    title: "Car Detailing & PPF Campaigns",
+    description: "Generated 47 high-quality leads for ceramic & PPF video ads at ₹153.91 per lead, with strong reach of 52,169 impressions.",
+    metrics: [
+      { label: "Leads", value: "47" },
+      { label: "Cost/Lead", value: "₹153.91" },
+      { label: "Impressions", value: "52.2K" },
     ],
   },
 ];

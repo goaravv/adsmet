@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Zap, Target, TrendingUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { AnimatedBackground } from "./AnimatedBackground";
 export const HeroSection = () => {
   const [budget, setBudget] = useState("1000");
   const [selectedPackage, setSelectedPackage] = useState("");
@@ -77,9 +78,7 @@ export const HeroSection = () => {
   return <section className="min-h-screen bg-background relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-accent/10 rounded-full blur-3xl top-0 -left-20 animate-float"></div>
-        <div className="absolute w-96 h-96 bg-accent/10 rounded-full blur-3xl bottom-0 -right-20 animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute w-64 h-64 bg-accent/5 rounded-full blur-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse-neon"></div>
+        <AnimatedBackground />
       </div>
       
       <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-4 lg:py-8 relative z-10">

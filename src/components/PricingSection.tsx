@@ -198,9 +198,9 @@ export const PricingSection = () => {
 
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {plans.map((plan, index) => <Card key={index} className={`relative ${plan.popular ? 'neon-border animate-pulse-neon' : 'border-border'} bg-card/90 hover:scale-105 transition-all duration-300`}>
+            {plans.map((plan, index) => <Card key={index} className={`relative ${plan.popular ? 'neon-border bg-card/95' : 'border-border bg-card/90'} hover:scale-105 transition-all duration-300`}>
                 {plan.popular && <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-tech font-bold">
+                    <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
                       MOST POPULAR
                     </div>
                   </div>}

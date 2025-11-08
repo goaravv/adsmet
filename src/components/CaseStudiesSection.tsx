@@ -146,7 +146,8 @@ export const CaseStudiesSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <header className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
           <h2 id="case-studies-heading" className="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold tracking-tight text-foreground mb-4">
-            <span className="text-foreground">AI-Optimized Campaign</span> <span className="text-[hsl(var(--case-line))]">Growth Metrics</span>
+            <span className="text-foreground">AI-Optimized Campaign</span>{" "}
+            <span className="neon-text">Growth Metrics</span>
           </h2>
           <p className="mt-3 text-lg md:text-xl text-muted-foreground font-medium">
             Real-time performance data from our AI-powered Google Ads and Meta Ads campaigns
