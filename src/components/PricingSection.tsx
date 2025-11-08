@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Zap, TrendingUp, Phone } from "lucide-react";
 export const PricingSection = () => {
-  const [budget, setBudget] = useState([10000]);
-  const [manualBudget, setManualBudget] = useState("10000");
+  const [budget, setBudget] = useState([1000]);
+  const [manualBudget, setManualBudget] = useState("1000");
   const currentBudget = budget[0];
   const handleManualBudgetChange = (value: string) => {
     if (value === '' || parseInt(value) >= 1000) {

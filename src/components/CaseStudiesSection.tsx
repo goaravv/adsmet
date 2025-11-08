@@ -142,32 +142,32 @@ export const CaseStudiesSection: React.FC = () => {
     return () => clearInterval(t);
   }, [paused]);
   const current = useMemo(() => CASE_STUDIES[index], [index]);
-  return <section id="case-studies" aria-labelledby="case-studies-heading" className="py-12 md:py-16 bg-background" style={{ ['--case-line' as any]: '210 81% 51%' }}>
+  return <section id="case-studies" aria-labelledby="case-studies-heading" className="py-12 md:py-20 bg-gradient-to-b from-background to-background/95" style={{ ['--case-line' as any]: '210 81% 51%' }}>
       <div className="container mx-auto px-4">
-        <header className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-          <h2 id="case-studies-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Our Client Campaign <span className="text-[hsl(var(--case-line))]">Case Studies</span>
+        <header className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+          <h2 id="case-studies-heading" className="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold tracking-tight text-foreground mb-4">
+            <span className="text-foreground">AI-Optimized Campaign</span> <span className="text-[hsl(var(--case-line))]">Growth Metrics</span>
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Real results from AI-optimized Meta Ads campaigns across lead gen, engagement, and awareness.
+          <p className="mt-3 text-lg md:text-xl text-muted-foreground font-medium">
+            Real-time performance data from our AI-powered Google Ads and Meta Ads campaigns
           </p>
         </header>
 
-        <div className="rounded-xl border border-border bg-card text-card-foreground shadow-sm overflow-hidden animate-fade-in" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+        <div className="max-w-6xl mx-auto rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-card/95 to-card/80 text-card-foreground shadow-2xl shadow-accent/10 overflow-hidden animate-fade-in backdrop-blur-sm" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 p-3 md:p-4">
-            {current.stats.map((s, i) => <div key={i} className="rounded-lg border border-border/60 bg-card/50 p-3 text-center">
-                <h3 className="text-xs md:text-sm font-medium text-foreground/80">{s.title}</h3>
-                <p className="text-lg md:text-xl font-bold mt-1 text-[hsl(var(--case-line))]">{s.value}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 p-4 md:p-6 bg-gradient-to-r from-accent/5 via-transparent to-accent/5">
+            {current.stats.map((s, i) => <div key={i} className="rounded-xl border-2 border-accent/20 bg-gradient-to-br from-card to-card/80 p-4 md:p-5 text-center hover:border-accent/40 transition-all duration-300 hover:scale-105 shadow-lg">
+                <h3 className="text-xs md:text-sm font-heading font-medium text-muted-foreground mb-2">{s.title}</h3>
+                <p className="text-2xl md:text-3xl font-heading font-semibold mt-1 text-[hsl(var(--case-line))] drop-shadow-[0_0_8px_hsl(var(--case-line)/0.5)]">{s.value}</p>
               </div>)}
           </div>
 
           {/* Main area */}
-        <div className="grid md:grid-cols-3 gap-4 md:gap-6 p-3 md:p-4">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
           {/* Chart */}
-          <div className="md:col-span-2 rounded-lg border border-border/60 bg-card/50 p-4">
-            <h3 className="text-sm md:text-base font-semibold mb-3">Performance Overview</h3>
-            <div className="h-48 md:h-60">
+          <div className="md:col-span-2 rounded-xl border-2 border-accent/20 bg-gradient-to-br from-card/90 to-card/70 p-5 md:p-6 shadow-xl">
+            <h3 className="text-base md:text-lg font-heading font-semibold mb-4 text-foreground">Performance Overview</h3>
+            <div className="h-56 md:h-72">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={current.chartData} margin={{
                   left: 4,
@@ -175,30 +175,32 @@ export const CaseStudiesSection: React.FC = () => {
                   top: 8,
                   bottom: 0
                 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--muted-foreground) / 0.25)" />
-                    <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} />
-                    <YAxis stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--muted-foreground) / 0.2)" />
+                    <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem' }} />
+                    <YAxis stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} style={{ fontSize: '0.875rem' }} />
                     <Tooltip contentStyle={{
                     background: "hsl(var(--card))",
-                    border: "1px solid hsl(var(--border))",
-                    color: "hsl(var(--card-foreground))"
+                    border: "2px solid hsl(var(--accent) / 0.3)",
+                    color: "hsl(var(--card-foreground))",
+                    borderRadius: '0.5rem',
+                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
                   }} />
-            <Line type="monotone" dataKey="leads" stroke="hsl(var(--case-line))" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="leads" stroke="hsl(var(--case-line))" strokeWidth={3} dot={{ fill: 'hsl(var(--case-line))', r: 4 }} activeDot={{ r: 6 }} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
             </div>
 
             {/* Description */}
-            <aside className="rounded-lg border border-border/60 bg-card/50 p-4">
-              <h3 className="text-base md:text-lg font-semibold mb-2">Case Study</h3>
-              <p className="text-sm text-muted-foreground">{current.description}</p>
+            <aside className="rounded-xl border-2 border-accent/20 bg-gradient-to-br from-card/90 to-card/70 p-5 md:p-6 shadow-xl">
+              <h3 className="text-base md:text-lg font-heading font-semibold mb-3 text-foreground">Campaign Insights</h3>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-medium">{current.description}</p>
             </aside>
           </div>
 
           {/* Dots */}
-          <div className="flex items-center justify-center gap-2 pb-5">
-            {CASE_STUDIES.map((_, i) => <button key={i} aria-label={`Go to case study ${i + 1}`} onClick={() => setIndex(i)} className={`h-2.5 w-2.5 rounded-full transition-colors ${i === index ? "bg-primary" : "bg-muted"}`} />)}
+          <div className="flex items-center justify-center gap-3 pb-6 pt-2">
+            {CASE_STUDIES.map((_, i) => <button key={i} aria-label={`Go to case study ${i + 1}`} onClick={() => setIndex(i)} className={`h-3 w-3 rounded-full transition-all duration-300 ${i === index ? "bg-accent scale-125 shadow-[0_0_8px_hsl(var(--accent))]" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`} />)}
           </div>
         </div>
       </div>

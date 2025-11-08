@@ -75,21 +75,28 @@ export const HeroSection = () => {
     });
   };
   return <section className="min-h-screen bg-background relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-accent/10 rounded-full blur-3xl top-0 -left-20 animate-float"></div>
+        <div className="absolute w-96 h-96 bg-accent/10 rounded-full blur-3xl bottom-0 -right-20 animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute w-64 h-64 bg-accent/5 rounded-full blur-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse-neon"></div>
+      </div>
+      
       <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-4 lg:py-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center min-h-[80vh]">
           
           {/* Left Side - Hero Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left order-1">
             <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-tech font-bold leading-tight">
-                <span className="text-foreground">Meta Ads</span>{" "}
-                <span className="neon-text">AI Driven</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-semibold leading-tight">
+                <span className="text-foreground">Performance Marketing</span>{" "}
+                <span className="neon-text">AI-Driven</span>
                 <br />
                 <span className="text-foreground">Agency</span>
               </h1>
               
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                Unlock Strategic, AI-Driven Meta Ads Campaigns That Drive{" "}
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 font-medium">
+                Unlock Strategic, AI-Powered <span className="text-accent font-semibold">Google Ads & Meta Ads</span> Campaigns That Drive{" "}
                 <span className="text-accent font-semibold">Real Results</span>
               </p>
             </div>

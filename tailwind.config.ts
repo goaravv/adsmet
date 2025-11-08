@@ -67,7 +67,9 @@ export default {
 				darker: 'hsl(var(--darker))'
 			},
 			fontFamily: {
-				tech: ['Orbitron', 'Exo 2', 'Rajdhani', 'sans-serif'],
+				tech: ['Orbitron', 'sans-serif'],
+				sans: ['Montserrat', 'sans-serif'],
+				heading: ['Montserrat', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -8,6 +8,8 @@ import { PricingSection } from "@/components/PricingSection";
 import { StickyFooterCTA } from "@/components/StickyFooterCTA";
 import { Footer } from "@/components/Footer";
 import { CaseStudiesSection } from "@/components/CaseStudiesSection";
+import { PortfolioSection } from "@/components/PortfolioSection";
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -19,6 +21,7 @@ const Index = () => {
         <TrustedByExperts />
         <CalendarSection />
         <CaseStudiesSection />
+        <PortfolioSection />
         <PricingSection />
         <StickyFooterCTA />
         <Footer />
